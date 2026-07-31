@@ -1,0 +1,9 @@
+__pycache__/
+.venv/
+.ruff_cache/
+out/
+*.parquet
+# marimo session state is per-machine; committed assets (thumbnails) live in
+# recipes/__marimo__/assets/ and are added explicitly.
+recipes/__marimo__/*
+!recipes/__marimo__/assets/

@@ -1,0 +1,13 @@
+[project]
+name = "crowdcent-cookbook"
+version = "0.1.0"
+description = "Runnable marimo recipes for the CrowdCent Challenge and quantitative finance work."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+# Deliberately empty: every recipe declares its own dependencies in its
+# PEP 723 block and is self-contained. This project exists for dev tooling.
+dependencies = []
+
+[dependency-groups]
+dev = ["marimo==0.23.15"]
