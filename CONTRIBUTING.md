@@ -25,6 +25,17 @@ Keep one PEP 723 block at the top of the notebook. It needs:
 - `dependencies`
 - an OpenGraph `title` and `description`
 
+Recipes that are primarily dashboards may open in CrowdCent Cloud's app view:
+
+```toml
+[tool.crowdcent.cloud]
+default_view = "app"
+```
+
+Omit the table, or use `"editor"`, for the normal editor-first view. This is
+only a presentation default. It cannot grant credentials, network access,
+verification, or any other execution permission.
+
 If a recipe calls an external API, name the host in the pull request. New
 recipes appear as community recipes with no credentials or network access.
 CrowdCent reviews those permissions separately.

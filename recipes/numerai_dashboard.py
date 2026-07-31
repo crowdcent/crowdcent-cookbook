@@ -20,6 +20,9 @@
 # [tool.marimo.opengraph]
 # title = "Numerai dashboard"
 # description = "Live public performance for any Numerai account: payouts, stakes, leaderboard standing, and per-model scores across Classic, Signals, and Crypto. Read-only, no key, in a tab or on a daily schedule."
+#
+# [tool.crowdcent.cloud]
+# default_view = "app"
 # ///
 
 import marimo

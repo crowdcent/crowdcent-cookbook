@@ -18,7 +18,9 @@ uvx marimo edit recipes/numerai_dashboard.py
 Each notebook declares its own dependencies with
 [PEP 723](https://peps.python.org/pep-0723/), so there is no shared
 environment to assemble first. The same `.py` file runs locally and on
-CrowdCent Cloud.
+CrowdCent Cloud. Dashboard-style recipes can also declare
+`[tool.crowdcent.cloud] default_view = "app"` to open as an app in Cloud while
+keeping the editor one toggle away.
 
 ## Recipes
 
