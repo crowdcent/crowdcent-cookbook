@@ -11,7 +11,7 @@
 # /// script
 # requires-python = ">=3.12"
 # dependencies = [
-#     "marimo==0.23.15",
+#     "marimo",
 #     "numpy",
 #     "plotly==6.9.0",
 #     "urllib3==2.7.0",

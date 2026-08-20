@@ -1,5 +1,5 @@
 # /// script
-# dependencies = ["marimo==0.23.15"]
+# dependencies = ["marimo"]
 #
 # [tool.marimo.opengraph]
 # title = "Hello, Cloud"

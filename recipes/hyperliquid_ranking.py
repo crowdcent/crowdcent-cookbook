@@ -1,7 +1,7 @@
 # /// script
 # dependencies = [
 #     "crowdcent-challenge",
-#     "marimo==0.23.15",
+#     "marimo",
 #     "numpy",
 #     "polars",
 #     "pyarrow",
