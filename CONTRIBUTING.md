@@ -45,8 +45,11 @@ CrowdCent reviews those permissions separately.
 - The notebook passes `marimo check --strict`.
 - Dependencies are declared in its PEP 723 block.
 - The repository contains no keys, tokens, wallet data, or private datasets.
-- A browser-only fallback labels generated data as sample data.
+- The same cells run in the browser, in a Cloud run, and on a laptop. No
+  `sys.platform` or import-guard branches; a recipe is its tutorial, plainly.
 - Live data failures raise an error instead of rendering an empty report.
+- Anything that writes to CrowdCent (a submission, an order) sits behind a
+  `mo.ui.run_button`. Opening a notebook never submits.
 - Outputs stay small and use `CROWDCENT_OUT_DIR` when present.
 
 Thumbnails are optional. Maintainers can generate them with
