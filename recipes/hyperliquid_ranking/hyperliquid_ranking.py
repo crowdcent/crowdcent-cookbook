@@ -10,12 +10,12 @@
 #
 # [tool.marimo.opengraph]
 # title = "Hyperliquid ranking, end to end"
-# description = "Train a gradient booster, predict the latest inference release, and submit to the Hyperliquid ranking challenge."
+# description = "Train a gradient booster on CrowdCent's training data, predict the latest inference release, and submit."
 # ///
 
 import marimo
 
-__generated_with = "0.23.15"
+__generated_with = "0.24.1"
 app = marimo.App(width="medium")
 
 
@@ -37,9 +37,9 @@ def _(mo):
     Train a model on CrowdCent's training data, predict the latest inference
     release, and submit to the `hyperliquid-ranking` challenge.
 
-    The client reads `CROWDCENT_API_KEY` from the environment. On CrowdCent
-    Cloud, turn on Challenge access for the project. Locally,
-    [generate a key](https://crowdcent.com/profile/settings/) and export it.
+    The client reads `CROWDCENT_API_KEY` from the environment. On Cloud, turn
+    on Challenge access for this project. Anywhere else,
+    [create a key](https://crowdcent.com/profile/settings/) and export it.
     """)
     return
 
@@ -83,8 +83,8 @@ def _(features, inference_data, model, pl):
             model.predict(inference_data[features].to_numpy()), ["pred_10d", "pred_30d"]
         )
         .with_columns(inference_data["id"])
-        .select(["id", "pred_10d", "pred_30d"])
-        .with_columns(pl.col(["pred_10d", "pred_30d"]).clip(0, 1))
+        .select("id", "pred_10d", "pred_30d")
+        .with_columns(pl.col("pred_10d", "pred_30d").clip(0, 1))
     )
     predictions.sort("pred_30d", descending=True)
     return (predictions,)

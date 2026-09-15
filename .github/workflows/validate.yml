@@ -18,4 +18,4 @@ jobs:
           python-version: "3.12"
           enable-cache: true
       - run: uv sync --locked
-      - run: uv run marimo check --strict recipes
+      - run: uv run marimo check --strict --ignore-scripts recipes

@@ -1,37 +1,37 @@
 # CrowdCent Cookbook
 
 Open-source [marimo](https://marimo.io) notebooks for the
-[CrowdCent Challenge](https://crowdcent.com) and quantitative finance.
+[CrowdCent Challenge](https://crowdcent.com) and CrowdCent Cloud.
 
-Browse the cookbook:
-
-```bash
-uvx marimo run recipes/
-```
-
-Open a recipe for editing:
+Each recipe is a folder under `recipes/`. The notebook carries the folder's
+name; anything else in the folder is a helper the notebook imports. A folder
+opens on CrowdCent Cloud as one project, and the same files run on a laptop:
 
 ```bash
-uvx marimo edit recipes/numerai_dashboard.py
+uvx marimo edit --sandbox recipes/numerai_dashboard/numerai_dashboard.py
 ```
 
-Each notebook declares its own dependencies with
-[PEP 723](https://peps.python.org/pep-0723/), so there is no shared
-environment to assemble first. The same `.py` file runs locally and on
-CrowdCent Cloud. Dashboard-style recipes can also declare
-`[tool.crowdcent.cloud] default_view = "app"` to open as an app in Cloud while
-keeping the editor one toggle away.
+Every notebook declares its dependencies in a
+[PEP 723](https://peps.python.org/pep-0723/) block, so `--sandbox` builds the
+environment the notebook asks for and nothing else.
 
 ## Recipes
 
-- `hyperliquid_ranking.py` trains a ranking model and submits predictions.
-- `numerai_dashboard.py` charts public Numerai performance.
-- `hello_cloud.py` shows the CrowdCent Cloud runtime and output directory.
+- `hello_cloud` tells a Cloud run from a tab and leaves a file behind for the run report.
+- `hyperliquid_ranking` trains a model on CrowdCent's training data and submits predictions.
+- `track_your_performance` charts every scored submission you have made, by slot.
+- `simulate_the_meta_model` backtests the meta-model as a long/short book from a few sliders.
+- `optuna_tuning` tunes XGBoost with Optuna, from a form in the browser or from a run's parameters on Cloud.
+- `numerai_dashboard` reads payouts, stake, and per-model scores for any Numerai account.
+
+Recipes that call CrowdCent read `CROWDCENT_API_KEY` from the environment. On
+Cloud that is the project's Challenge access switch; elsewhere,
+[create a key](https://crowdcent.com/profile/settings/) and export it.
 
 ## Contributing
 
-Copy a nearby recipe, edit it in marimo, and open a pull request. The short
-checklist and metadata format are in [CONTRIBUTING.md](./CONTRIBUTING.md).
+Copy the closest recipe folder, edit it in marimo, and open a pull request.
+The checklist is in [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
 
