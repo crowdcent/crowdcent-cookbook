@@ -19,3 +19,4 @@ jobs:
           enable-cache: true
       - run: uv sync --locked
       - run: uv run marimo check --strict --ignore-scripts recipes
+      - run: uv run python -m unittest discover -s tests

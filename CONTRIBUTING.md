@@ -15,6 +15,7 @@ Before opening a pull request:
 
 ```bash
 uv run marimo check --strict --ignore-scripts recipes
+uv run python -m unittest discover -s tests
 ```
 
 ## The notebook
@@ -35,15 +36,25 @@ grants credentials or network access.
 
 - The same cells run in a browser tab, in a Cloud run, and on a laptop. No
   `sys.platform` or import-guard branches.
-- A write to CrowdCent (a submission, an order) waits for a
+- In an interactive notebook, a write to CrowdCent waits for a
   `mo.ui.run_button`. A fetch that takes more than a moment waits for a
-  `mo.ui.form` submit, so opening a notebook is cheap.
+  `mo.ui.form` submit, so opening a notebook is cheap. Recipes intended for
+  unattended execution use `os.environ.get("CROWDCENT_RUN_ID")` to pass
+  these UI gates during Cloud runs, including scheduled runs. For example,
+  `mo.stop(not os.environ.get("CROWDCENT_RUN_ID") and not submit.value)`.
+  Describe automatic submissions in the notebook's introduction.
 - Helpers hold the plumbing; the notebook holds the story. If a cell needs a
   comment to explain what it does, move that code into a helper.
-- A form a Cloud run should answer reads its arguments first:
+- A form with complete defaults can run unattended without parameters:
   `answered = dict(mo.cli_args()) or form.value`, then
-  `mo.stop(not answered, ...)`. A run told `trials=100` goes straight
-  through; a browser tab has no arguments and waits for the form.
+  `mo.stop(not answered and not os.environ.get("CROWDCENT_RUN_ID"), ...)`
+  and `config = {**DEFAULTS, **(answered or {})}`. Use the same `DEFAULTS`
+  to initialize the form. Run parameters override those defaults; an
+  interactive notebook without arguments waits for the form. A run uses
+  defaults saved in the code, not unsaved widget values from a session.
+- Use the run ID for Cloud execution context. Cloud runs execute through
+  `marimo export html`; in marimo 0.24.1, `mo.running_in_notebook()` is
+  still `True` and `mo.app_meta().mode` is `"edit"` during export.
 - Live data failures raise. A recipe never renders a sample and calls it a
   report.
 - Outputs go under `CROWDCENT_OUT_DIR` when it is set and stay small.

@@ -21,12 +21,14 @@ app = marimo.App(width="medium")
 
 @app.cell
 def _():
+    import os
+
     import crowdcent_challenge as cc
     import marimo as mo
     import polars as pl
     from xgboost import XGBRegressor
 
-    return XGBRegressor, cc, mo, pl
+    return XGBRegressor, cc, mo, os, pl
 
 
 @app.cell
@@ -36,6 +38,9 @@ def _(mo):
 
     Train a model on CrowdCent's training data, predict the latest inference
     release, and submit to the `hyperliquid-ranking` challenge.
+
+    Cloud runs, including scheduled runs, submit automatically to slot 1.
+    In an interactive notebook, submission waits for the button below.
 
     The client reads `CROWDCENT_API_KEY` from the environment. On Cloud, turn
     on Challenge access for this project. Anywhere else,
@@ -98,9 +103,9 @@ def _(mo):
 
 
 @app.cell
-def _(client, mo, predictions, submit):
+def _(client, mo, os, predictions, submit):
     mo.stop(
-        not submit.value,
+        not os.environ.get("CROWDCENT_RUN_ID") and not submit.value,
         mo.md("Press **Submit to the Challenge** to send these predictions to slot 1."),
     )
     client.submit_predictions(df=predictions, slot=1)

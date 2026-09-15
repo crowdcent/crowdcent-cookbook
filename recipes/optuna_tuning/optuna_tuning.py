@@ -14,7 +14,7 @@
 #
 # [tool.marimo.opengraph]
 # title = "Tune a model with Optuna"
-# description = "Search XGBoost settings on CrowdCent's training data, from a form in the browser or from a run's parameters on Cloud."
+# description = "Search XGBoost settings on CrowdCent's training data, from a form in the browser or with defaults and optional parameters on Cloud."
 # ///
 
 import marimo
@@ -49,10 +49,10 @@ def _(mo):
     challenge scores you: mean daily Spearman correlation on dates the model
     never saw.
 
-    In the browser, choose a search and press **Tune**. On CrowdCent Cloud,
-    give the run parameters instead, like `trials=100 lr_max=0.2`. They answer
-    the same form, so the run tunes without anyone pressing anything, and runs
-    told different things sit side by side under History.
+    In an interactive notebook, choose a search and press **Tune**. Cloud
+    runs use the defaults below automatically. Override them with run
+    parameters like `trials=100 lr_max=0.2`; runs with different parameters
+    sit side by side under History.
 
     The notebook charts every trial and names the best one. It saves the
     trials to `trials/<name>.csv` and the best model to `models/<name>.joblib`
@@ -107,16 +107,15 @@ def _(mo):
 
 
 @app.cell
-def _(DEFAULTS, mo, search_form):
-    # A run's parameters answer the form; in the browser there are none, so the form does.
+def _(DEFAULTS, mo, os, search_form):
     answered = dict(mo.cli_args()) or search_form.value
     mo.stop(
-        not answered,
+        not answered and not os.environ.get("CROWDCENT_RUN_ID"),
         mo.md(
-            "Choose a search and press **Tune**, or run this notebook with parameters like `trials=100 lr_max=0.2`."
+            "Choose a search and press **Tune**, or start a Cloud run to use the defaults with optional parameters like `trials=100 lr_max=0.2`."
         ),
     )
-    search = {**DEFAULTS, **answered}
+    search = {**DEFAULTS, **(answered or {})}
     search
     return (search,)
 

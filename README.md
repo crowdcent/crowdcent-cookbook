@@ -21,7 +21,7 @@ environment the notebook asks for and nothing else.
 - `hyperliquid_ranking` trains a model on CrowdCent's training data and submits predictions.
 - `track_your_performance` charts every scored submission you have made, by slot.
 - `simulate_the_meta_model` backtests the meta-model as a long/short book from a few sliders.
-- `optuna_tuning` tunes XGBoost with Optuna, from a form in the browser or from a run's parameters on Cloud.
+- `optuna_tuning` tunes XGBoost with Optuna, from a form in the browser or with defaults and optional run parameters on Cloud.
 - `numerai_dashboard` reads payouts, stake, and per-model scores for any Numerai account.
 
 Recipes that call CrowdCent read `CROWDCENT_API_KEY` from the environment. On
