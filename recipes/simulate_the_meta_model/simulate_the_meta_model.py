@@ -1,6 +1,6 @@
 # /// script
 # dependencies = [
-#     "crowdcent-challenge",
+#     "crowdcent-challenge>=0.1.21",
 #     "marimo",
 #     "plotly",
 #     "polars",
@@ -9,6 +9,16 @@
 # [tool.marimo.opengraph]
 # title = "Simulate the meta-model"
 # description = "Backtest the meta-model as a long/short book with the engine behind the Simulator, from a few sliders."
+#
+# [tool.crowdcent.thumbnail]
+# title = "Strategy vs. Bitcoin"
+# output = "figure"
+# figure = "figure"
+# label = "10L / 10S · Min var · 1×"
+# badge = "BACKTEST"
+# args = ["--n_long=10"]
+# legend = ["Strategy", "BTC"]
+# needs_api_key = true
 # ///
 
 import marimo
@@ -19,12 +29,14 @@ app = marimo.App(width="medium")
 
 @app.cell
 def _():
+    import os
+
     import crowdcent_challenge as cc
     import marimo as mo
     import plotly.express as px
     import polars as pl
 
-    return cc, mo, pl, px
+    return cc, mo, os, pl, px
 
 
 @app.cell
@@ -35,6 +47,9 @@ def _(mo):
     Trade the meta-model's rankings as a long/short book and see what it
     would have earned. The engine is the one behind the site's Simulator;
     knobs above your points tier are clamped and reported back.
+
+    Cloud runs use the form's defaults. Run parameters such as
+    `n_long=20 n_short=20 leverage=1.5` override them.
 
     The client reads `CROWDCENT_API_KEY` from the environment. On Cloud, turn
     on Challenge access for this project. Anywhere else,
@@ -51,6 +66,13 @@ def _(cc):
 
 @app.cell
 def _(mo):
+    DEFAULTS = {
+        "n_long": 10,
+        "n_short": 10,
+        "rebalance": "10t",
+        "optimizer": "min_var",
+        "leverage": 1.0,
+    }
     book = (
         mo.md("""
         {n_long} {n_short}
@@ -60,8 +82,8 @@ def _(mo):
         {leverage}
         """)
         .batch(
-            n_long=mo.ui.slider(1, 50, value=10, label="Long names"),
-            n_short=mo.ui.slider(1, 50, value=10, label="Short names"),
+            n_long=mo.ui.slider(1, 50, value=DEFAULTS["n_long"], label="Long names"),
+            n_short=mo.ui.slider(1, 50, value=DEFAULTS["n_short"], label="Short names"),
             rebalance=mo.ui.dropdown(
                 {
                     "Daily": "1",
@@ -81,27 +103,34 @@ def _(mo):
                     "Signal": "signal",
                 },
                 value="Min var",
-                label="Sizing",
+                label="Weighting",
             ),
-            leverage=mo.ui.slider(0.25, 3, step=0.25, value=1, label="Leverage"),
+            leverage=mo.ui.slider(
+                0.25, 3, step=0.25, value=DEFAULTS["leverage"], label="Leverage"
+            ),
         )
         .form(submit_button_label="Simulate")
     )
     book
-    return (book,)
+    return DEFAULTS, book
 
 
 @app.cell
-def _(book, client, mo):
-    mo.stop(book.value is None, mo.md("Choose a book and press **Simulate**."))
+def _(DEFAULTS, book, client, mo, os):
+    answered = dict(mo.cli_args()) or book.value
+    mo.stop(
+        not answered and not os.environ.get("CROWDCENT_RUN_ID"),
+        mo.md("Choose a book and press **Simulate**."),
+    )
+    config = {**DEFAULTS, **(answered or {})}
     result = client.run_simulation(
         config={
-            "n_long": book.value["n_long"],
-            "n_short": book.value["n_short"],
-            "rebalance_days": book.value["rebalance"],
-            "optimizer": book.value["optimizer"],
+            "n_long": config["n_long"],
+            "n_short": config["n_short"],
+            "rebalance_days": str(config["rebalance"]),
+            "optimizer": config["optimizer"],
         },
-        leverage=book.value["leverage"],
+        leverage=config["leverage"],
         include=["curve"],
     )
     stats = result["stats"]
@@ -110,15 +139,21 @@ def _(book, client, mo):
 
 @app.cell
 def _(mo, result, stats):
+    def metric(value, *, percent=False):
+        if value is None:
+            return "—"
+        return f"{100 * value:+.1f}%" if percent else f"{value:.2f}"
+
     mo.vstack(
         [
             mo.hstack(
                 [
-                    mo.stat(f"{stats['sharpe']:.2f}", label="Sharpe"),
-                    mo.stat(f"{100 * stats['cagr']:+.1f}%", label="CAGR"),
-                    mo.stat(f"{100 * stats['ann_vol']:.1f}%", label="Volatility"),
+                    mo.stat(metric(stats["sharpe"]), label="Sharpe"),
+                    mo.stat(metric(stats["cagr"], percent=True), label="CAGR"),
+                    mo.stat(metric(stats["ann_vol"], percent=True), label="Volatility"),
                     mo.stat(
-                        f"{100 * stats['max_drawdown']:.1f}%", label="Max drawdown"
+                        metric(stats["max_drawdown"], percent=True),
+                        label="Max drawdown",
                     ),
                 ],
                 justify="space-around",
@@ -138,7 +173,9 @@ def _(mo, result, stats):
 
 @app.cell
 def _(mo, pl, px, result):
-    curve = pl.DataFrame(result["curve"]).with_columns(pl.col("dates").str.to_date())
+    curve = pl.DataFrame(result["curve"], strict=False).with_columns(
+        pl.col("dates").str.to_date()
+    )
     figure = px.line(
         curve,
         x="dates",

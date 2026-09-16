@@ -1,0 +1,1546 @@
+{
+  "figures": [
+    {
+      "data": [
+        {
+          "hovertemplate": "tournament=classic<br>date=%{x}<br>NMR=%{y}<extra></extra>",
+          "legendgroup": "classic",
+          "line": {
+            "color": "#8a8780",
+            "dash": "solid"
+          },
+          "marker": {
+            "symbol": "circle"
+          },
+          "mode": "lines",
+          "name": "classic",
+          "orientation": "v",
+          "showlegend": true,
+          "x": [
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-18",
+            "2025-09-19",
+            "2025-09-20",
+            "2025-09-23",
+            "2025-09-25",
+            "2025-09-26",
+            "2025-09-27",
+            "2025-09-30",
+            "2025-10-01",
+            "2025-10-02",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-07",
+            "2025-10-08",
+            "2025-10-09",
+            "2025-10-10",
+            "2025-10-11",
+            "2025-10-14",
+            "2025-10-15",
+            "2025-10-16",
+            "2025-10-17",
+            "2025-10-18",
+            "2025-10-21",
+            "2025-10-22",
+            "2025-10-23",
+            "2025-10-24",
+            "2025-10-25",
+            "2025-10-28",
+            "2025-10-29",
+            "2025-10-30",
+            "2025-10-31",
+            "2025-11-01",
+            "2025-11-04",
+            "2025-11-05",
+            "2025-11-06",
+            "2025-11-07",
+            "2025-11-08",
+            "2025-11-11",
+            "2025-11-12",
+            "2025-11-13",
+            "2025-11-14",
+            "2025-11-15",
+            "2025-11-18",
+            "2025-11-19",
+            "2025-11-20",
+            "2025-11-21",
+            "2025-11-22",
+            "2025-11-25",
+            "2025-11-26",
+            "2025-11-27",
+            "2025-11-28",
+            "2025-11-29",
+            "2025-12-03",
+            "2025-12-04",
+            "2025-12-05",
+            "2025-12-06",
+            "2025-12-09",
+            "2025-12-10",
+            "2025-12-11",
+            "2025-12-12",
+            "2025-12-13",
+            "2025-12-16",
+            "2025-12-17",
+            "2025-12-18",
+            "2025-12-20",
+            "2025-12-23",
+            "2025-12-24",
+            "2025-12-25",
+            "2025-12-26",
+            "2025-12-27",
+            "2025-12-30",
+            "2025-12-31",
+            "2026-01-01",
+            "2026-01-02",
+            "2026-01-03",
+            "2026-01-06",
+            "2026-01-07",
+            "2026-01-08",
+            "2026-01-09",
+            "2026-01-10",
+            "2026-01-13",
+            "2026-01-14",
+            "2026-01-15",
+            "2026-01-16",
+            "2026-01-17",
+            "2026-01-20",
+            "2026-01-21",
+            "2026-01-22",
+            "2026-01-24",
+            "2026-01-27",
+            "2026-01-28",
+            "2026-01-29",
+            "2026-01-30",
+            "2026-01-31",
+            "2026-02-03",
+            "2026-02-04",
+            "2026-02-05",
+            "2026-02-06",
+            "2026-02-07",
+            "2026-02-10",
+            "2026-02-11",
+            "2026-02-14",
+            "2026-02-17",
+            "2026-02-18",
+            "2026-02-20",
+            "2026-02-21",
+            "2026-02-24",
+            "2026-02-25",
+            "2026-02-27",
+            "2026-02-28",
+            "2026-03-03",
+            "2026-03-07",
+            "2026-03-10",
+            "2026-03-11",
+            "2026-03-12",
+            "2026-03-13",
+            "2026-03-14",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20",
+            "2026-03-24",
+            "2026-03-25",
+            "2026-03-26",
+            "2026-03-27",
+            "2026-03-28",
+            "2026-03-31",
+            "2026-04-01",
+            "2026-04-02",
+            "2026-04-03",
+            "2026-04-04",
+            "2026-04-07",
+            "2026-04-08",
+            "2026-04-10",
+            "2026-04-11",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-21",
+            "2026-04-22",
+            "2026-04-23",
+            "2026-04-24",
+            "2026-04-25",
+            "2026-04-28",
+            "2026-04-29",
+            "2026-04-30",
+            "2026-05-01",
+            "2026-05-02",
+            "2026-05-05",
+            "2026-05-06",
+            "2026-05-07",
+            "2026-05-08",
+            "2026-05-09",
+            "2026-05-12",
+            "2026-05-13",
+            "2026-05-14",
+            "2026-05-15",
+            "2026-05-16",
+            "2026-05-19",
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-22",
+            "2026-05-23",
+            "2026-05-26",
+            "2026-05-27",
+            "2026-05-28",
+            "2026-05-29",
+            "2026-05-30",
+            "2026-06-02",
+            "2026-06-03",
+            "2026-06-04",
+            "2026-06-05",
+            "2026-06-06",
+            "2026-06-09",
+            "2026-06-10",
+            "2026-06-11",
+            "2026-06-12",
+            "2026-06-13",
+            "2026-06-16",
+            "2026-06-17",
+            "2026-06-18",
+            "2026-06-19",
+            "2026-06-22",
+            "2026-06-23",
+            "2026-06-24",
+            "2026-06-25",
+            "2026-06-26",
+            "2026-06-29",
+            "2026-06-30",
+            "2026-07-01",
+            "2026-07-02",
+            "2026-07-03",
+            "2026-07-06",
+            "2026-07-07",
+            "2026-07-08",
+            "2026-07-09",
+            "2026-07-10",
+            "2026-07-13",
+            "2026-07-14",
+            "2026-07-15",
+            "2026-07-16",
+            "2026-07-17",
+            "2026-07-20",
+            "2026-07-21",
+            "2026-07-22",
+            "2026-07-23",
+            "2026-07-24",
+            "2026-07-27",
+            "2026-07-28",
+            "2026-07-29",
+            "2026-07-30",
+            "2026-07-31",
+            "2026-08-04",
+            "2026-08-05",
+            "2026-08-06",
+            "2026-08-07",
+            "2026-08-10",
+            "2026-08-11",
+            "2026-08-12",
+            "2026-08-13",
+            "2026-08-14",
+            "2026-08-17",
+            "2026-08-18",
+            "2026-08-19",
+            "2026-08-21",
+            "2026-08-24",
+            "2026-08-25",
+            "2026-08-27",
+            "2026-08-28",
+            "2026-08-31",
+            "2026-09-01",
+            "2026-09-02",
+            "2026-09-03",
+            "2026-09-04",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-14",
+            "2026-09-15"
+          ],
+          "xaxis": "x",
+          "y": {
+            "dtype": "f8",
+            "bdata": "XF6o6w1nMEA+wn7hAcEqQCE4yHgVDDtAITjIeBUMO0CAGTU8LCvdv/5WV6himTfAF2VS+1ZeQMAXZVL7Vl5AwBW3EGEoK0XAFbcQYSgrRcDoEtkcudpEwAr24GV0ajjAi8bzAGTCT8DifMBWbXRawE6bh0w2oWLAxl2AsTAiasD/g9DYdKZvwMUk1WroMnHAe5iUfzF0cMBYKqXidl5uwBtrhJ/B3mbAuPKH44VDYMBErg9xDwhAwLzf02BVwTtAq5i7ch+PREA6GCHy1ddMQNBWMiS7N1hASJNeudiBXkC2pqpgJyBhQPu6GAo2fWhAVPFFx6gQbUDGQ0PlsyVzQLMdxtjlUHVA+C/fVpWxdkByF6VylU58QJguhO4g0IBAStMiNGuQgEDtVBhxcVuCQO1UGHFxW4JAiw0TSTAjf0AAD9/1j06BQBnwxV3SPn5AKqSLG2UygkD74q6P7uSDQAKRI5kUTIZAiFaKJb+6h0A2xXSL4wSJQIlDvtXYiIdAbYx6CSfWiED730BaemaKQDb3r0CTi4tAV1KyR/UPi0COBUw5+YeMQEFNLivhbI5A6DJtnkGAj0CaQIbsUx+QQH0/SFU0I5FASylMJKZ7kkAm75OVqweTQFec9jabg5NAS5bsfnGnk0ANpDQg5wyUQGJjWwAIbJVATO8prPQtlkByylgCQWiWQIYQBgCdb5dAxi28UZHQmEDf6K7OeeeYQO7csl9Sk5lAdYshE6WemkAaKES7KrKcQAAXYl8b/51Al21g1h74nkBz12l+1RCgQMN8ZT4u+6BA9dpKWdltoUDAh5lKIYWiQGCSjXMiDKNA2u8F93v2okCAfKYOyRKjQNHgSGAiDaNA0eBIYCINo0CZB3BS+SyjQMB+uPIXoKJAz6eDSalfoUC6sZNcsIWgQAyQXVVg051A/ssvZ/QJmkDg7EKhSRCWQInepu4aiZJAWrEXlV7nkECxNbnLFrGKQIZE22pZaYNAFqLQrbzrc0DQ91VPbA5KQFz59YdnH03AHRqQRNE+XsATpqoCW9FZwDY95s80wUTANj3mzzTBRMCo8b+rn3RjwF3Mo4GCH2HAC0whKPCdVcAYFLZqcQtVwBpg+/f48G/A2bMmjO+5aMBctCjfyWZiwFYKc0/gF2rArA9KaPhtc8ADKDup88dzwN3fxM6Y6HDAStl8UVENdMBMD0sRMLZ0wEwPSxEwtnTA1iSIigIUZsBsXnHIhxhRwPYXR6K16VbAnyBhMgFbVMAAhWwPhCMOwACFbA+EIw7AuPm/9v5xTkAkqSBX+aVfQA9/BPGeMWZAD38E8Z4xZkBkiedn3Bp1QPzTAkVgjH1A/NMCRWCMfUDv1sQx7ZKDQDQLWEVze4dAyRf9uLxXj0BTrtHNN5GUQFOu0c03kZRAJMkdVNiumEAmNCgNMn6dQGLjuv2XyaBAYuO6/ZfJoEBQa9UpO16iQNW33H1VuaNAYjjl8UsYpUBWy0Xx4QCmQFbLRfHhAKZAGYiAacCVpUB3pVvq9zelQMXv5apMHaVAf+rLUu9xpUDGXNIkAlelQIM8ps8Kr6VAvpYxr/0LpkCGYOqiNMelQAiGG8kao6VAPkpsiEo3pUBZssUB5cSkQHG/mb6Bo6RA1Z4bG+6xo0Dtu24+UFqjQI7zqNlobKNALVwqKRxbo0AxomrR5MCjQLY/RgsffKNAWzwjkAruokCw++8esGmiQLHsjGFO5aFAcLUEQVixoUBHVa2lHqWhQEbbOWOwGKFAZhQ5E4W7oEAA00NsLnigQNEXhp3+oaBAvLNuIE3sn0CVEM9w2VueQOcMgHY+l5xAAckCgBAsnECs/PM1jN6aQB4+aVzN4JhAhNGkIje5l0Cu9/4JPYWVQBP5wBH+iZRAfXTZ8seSk0BhEhjVljqTQA+frIzzsZNAm0NrlvChlECEe6+89oCVQIwck3A68ZRALg4OCS89k0ClA0lQ5KmQQOfe0aatPI1AQj26ZwvVh0A4W6/f9kKGQMztHN/na4JABArl/14qgkCXt8vOgnGBQCkknLQgToFAE+5D0QPXg0ANAbQoGCCFQJIk3KmNDYlA2IT/+GsfjEBQIJdJReKNQNF/I34i9I5A32gXndfDkUAcDgJBBqGUQFvUM06UBZhAOBWcUNLJnEB+NZiZ7NygQFI4ZO07saNAER8ByXPOpkDDm68dogOqQPDoR8UzSa1AEVxe9b1RsECbesuY10qyQAweF8mA1LNAEtmxaA8JtUB+aKp7djO2QGJ7YiuPfrdAZxboYhe6uEChVYYaWeO5QDulbqPuSrtA1DGCB+5fvEDDEk00f0+9QDvL9hQIzL1AxvpSwSkwvkBGGMwwDc++QGvDpYPAfL9A3ZNlX+ITwEAOEQVvfGPAQLZznG5OnMBA1rcjfxXYwEBus1CV6w/BQKOO+f4jGsFAM2yssNxLwUCRV2RsbKDBQFn5TtYXxcFAVrsCjqDowUD+0vvbiPDBQIyXklIT9MFAGkSm8KsswkAPz43NkD7CQNkVAU0QQsJAVZehB1NawkDSoB4YyVHCQHhQ8NtaYsJAeFDw21piwkCRj7e2Y3DCQFs02Hl1Z8JAlOJTi3NcwkArODQUGFrCQA=="
+          },
+          "yaxis": "y",
+          "type": "scatter"
+        },
+        {
+          "hovertemplate": "tournament=crypto<br>date=%{x}<br>NMR=%{y}<extra></extra>",
+          "legendgroup": "crypto",
+          "line": {
+            "color": "#17c843",
+            "dash": "solid"
+          },
+          "marker": {
+            "symbol": "circle"
+          },
+          "mode": "lines",
+          "name": "crypto",
+          "orientation": "v",
+          "showlegend": true,
+          "x": [
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-18",
+            "2025-09-19",
+            "2025-09-20",
+            "2025-09-23",
+            "2025-09-24",
+            "2025-09-25",
+            "2025-09-26",
+            "2025-09-27",
+            "2025-09-30",
+            "2025-10-01",
+            "2025-10-02",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-07",
+            "2025-10-08",
+            "2025-10-09",
+            "2025-10-10",
+            "2025-10-11",
+            "2025-10-14",
+            "2025-10-15",
+            "2025-10-16",
+            "2025-10-17",
+            "2025-10-18",
+            "2025-10-21",
+            "2025-10-22",
+            "2025-10-23",
+            "2025-10-24",
+            "2025-10-25",
+            "2025-10-28",
+            "2025-10-29",
+            "2025-10-30",
+            "2025-10-31",
+            "2025-11-01",
+            "2025-11-04",
+            "2025-11-05",
+            "2025-11-06",
+            "2025-11-07",
+            "2025-11-08",
+            "2025-11-13",
+            "2025-11-14",
+            "2025-11-15",
+            "2025-11-18",
+            "2025-11-19",
+            "2025-11-20",
+            "2025-11-21",
+            "2025-11-22",
+            "2025-11-25",
+            "2025-11-26",
+            "2025-11-27",
+            "2025-11-28",
+            "2025-11-29",
+            "2025-12-02",
+            "2025-12-03",
+            "2025-12-04",
+            "2025-12-05",
+            "2025-12-06",
+            "2025-12-09",
+            "2025-12-10",
+            "2025-12-11",
+            "2025-12-12",
+            "2025-12-13",
+            "2026-03-12",
+            "2026-03-13",
+            "2026-03-14",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20",
+            "2026-03-21",
+            "2026-03-24",
+            "2026-03-25",
+            "2026-03-26",
+            "2026-03-27",
+            "2026-03-28",
+            "2026-03-31",
+            "2026-04-01",
+            "2026-04-02",
+            "2026-04-03",
+            "2026-04-04",
+            "2026-04-07",
+            "2026-04-08",
+            "2026-04-09",
+            "2026-04-10",
+            "2026-04-11",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-21",
+            "2026-04-22",
+            "2026-04-23",
+            "2026-04-24",
+            "2026-04-25",
+            "2026-04-28",
+            "2026-04-29",
+            "2026-04-30",
+            "2026-05-02",
+            "2026-05-05",
+            "2026-05-06",
+            "2026-05-07",
+            "2026-05-08",
+            "2026-05-09",
+            "2026-05-12",
+            "2026-05-13",
+            "2026-05-14",
+            "2026-05-15",
+            "2026-05-16",
+            "2026-05-19",
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-22",
+            "2026-05-23",
+            "2026-05-26",
+            "2026-05-27",
+            "2026-05-28",
+            "2026-05-29",
+            "2026-05-30",
+            "2026-06-02",
+            "2026-06-03",
+            "2026-06-04",
+            "2026-06-05",
+            "2026-06-06",
+            "2026-06-09",
+            "2026-06-10",
+            "2026-06-11",
+            "2026-06-12",
+            "2026-06-13",
+            "2026-06-16",
+            "2026-06-17",
+            "2026-06-18",
+            "2026-06-19",
+            "2026-06-22",
+            "2026-06-23",
+            "2026-06-24",
+            "2026-06-25",
+            "2026-06-26",
+            "2026-06-29",
+            "2026-06-30",
+            "2026-07-01",
+            "2026-07-02",
+            "2026-07-03",
+            "2026-07-06",
+            "2026-07-07",
+            "2026-07-08",
+            "2026-07-09",
+            "2026-07-10",
+            "2026-07-13",
+            "2026-07-14",
+            "2026-07-15",
+            "2026-07-16",
+            "2026-07-17",
+            "2026-07-20",
+            "2026-07-21",
+            "2026-07-22",
+            "2026-07-23",
+            "2026-07-24",
+            "2026-07-27",
+            "2026-07-28",
+            "2026-07-29",
+            "2026-07-30",
+            "2026-07-31",
+            "2026-08-03",
+            "2026-08-04",
+            "2026-08-05",
+            "2026-08-06",
+            "2026-08-07",
+            "2026-08-10",
+            "2026-08-11",
+            "2026-08-12",
+            "2026-08-13",
+            "2026-08-14",
+            "2026-08-17",
+            "2026-08-18",
+            "2026-08-19",
+            "2026-08-20",
+            "2026-08-21",
+            "2026-08-24",
+            "2026-08-25",
+            "2026-08-26",
+            "2026-08-27",
+            "2026-08-28",
+            "2026-08-31",
+            "2026-09-01",
+            "2026-09-02",
+            "2026-09-03",
+            "2026-09-04",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-14",
+            "2026-09-15"
+          ],
+          "xaxis": "x",
+          "y": {
+            "dtype": "f8",
+            "bdata": "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"
+          },
+          "yaxis": "y",
+          "type": "scatter"
+        },
+        {
+          "hovertemplate": "tournament=signals<br>date=%{x}<br>NMR=%{y}<extra></extra>",
+          "legendgroup": "signals",
+          "line": {
+            "color": "#24aac2",
+            "dash": "solid"
+          },
+          "marker": {
+            "symbol": "circle"
+          },
+          "mode": "lines",
+          "name": "signals",
+          "orientation": "v",
+          "showlegend": true,
+          "x": [
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-18",
+            "2025-09-19",
+            "2025-09-20",
+            "2025-09-23",
+            "2025-09-24",
+            "2025-09-25",
+            "2025-09-26",
+            "2025-09-27",
+            "2025-09-30",
+            "2025-10-01",
+            "2025-10-02",
+            "2025-11-28",
+            "2025-11-29",
+            "2025-12-02",
+            "2025-12-03",
+            "2025-12-04",
+            "2025-12-05",
+            "2025-12-06",
+            "2025-12-09",
+            "2025-12-10",
+            "2025-12-11",
+            "2025-12-12",
+            "2025-12-13",
+            "2025-12-16",
+            "2025-12-17",
+            "2025-12-18",
+            "2025-12-19",
+            "2025-12-20",
+            "2025-12-23",
+            "2025-12-24",
+            "2025-12-25",
+            "2025-12-26",
+            "2025-12-27",
+            "2025-12-30",
+            "2025-12-31",
+            "2026-01-01",
+            "2026-01-02",
+            "2026-01-03",
+            "2026-01-06",
+            "2026-01-07",
+            "2026-01-09",
+            "2026-01-10",
+            "2026-01-13",
+            "2026-01-14",
+            "2026-01-15",
+            "2026-01-16",
+            "2026-01-17",
+            "2026-01-20",
+            "2026-01-21",
+            "2026-01-22",
+            "2026-01-23",
+            "2026-01-24",
+            "2026-01-27",
+            "2026-01-28",
+            "2026-01-29",
+            "2026-01-30",
+            "2026-01-31",
+            "2026-02-03",
+            "2026-02-04",
+            "2026-02-05",
+            "2026-02-06",
+            "2026-02-07",
+            "2026-02-10",
+            "2026-02-11",
+            "2026-02-13",
+            "2026-02-14",
+            "2026-02-17",
+            "2026-02-18",
+            "2026-02-19",
+            "2026-02-20",
+            "2026-02-21",
+            "2026-02-24",
+            "2026-02-25",
+            "2026-02-26",
+            "2026-02-27",
+            "2026-02-28",
+            "2026-03-03",
+            "2026-03-04",
+            "2026-03-05",
+            "2026-03-06",
+            "2026-03-07",
+            "2026-03-10",
+            "2026-03-11",
+            "2026-03-12",
+            "2026-03-13",
+            "2026-03-14",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-21",
+            "2026-03-24",
+            "2026-03-25",
+            "2026-03-26",
+            "2026-03-27",
+            "2026-03-28",
+            "2026-03-31",
+            "2026-04-01",
+            "2026-04-02",
+            "2026-04-03",
+            "2026-04-04",
+            "2026-04-07",
+            "2026-04-08",
+            "2026-04-09",
+            "2026-04-10",
+            "2026-04-11",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-21",
+            "2026-04-22",
+            "2026-04-23",
+            "2026-04-24",
+            "2026-04-25",
+            "2026-04-28",
+            "2026-04-29",
+            "2026-04-30",
+            "2026-05-01",
+            "2026-05-02",
+            "2026-05-05",
+            "2026-05-06",
+            "2026-05-07",
+            "2026-05-08",
+            "2026-05-09",
+            "2026-05-12",
+            "2026-05-13",
+            "2026-05-14",
+            "2026-05-15",
+            "2026-05-16",
+            "2026-05-19",
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-22",
+            "2026-05-23",
+            "2026-05-26",
+            "2026-05-27",
+            "2026-05-28",
+            "2026-05-29",
+            "2026-05-30",
+            "2026-06-02",
+            "2026-06-03",
+            "2026-06-04",
+            "2026-06-05",
+            "2026-06-06",
+            "2026-06-09",
+            "2026-06-10",
+            "2026-06-11",
+            "2026-06-12",
+            "2026-06-13",
+            "2026-06-16",
+            "2026-06-17",
+            "2026-06-18",
+            "2026-06-19",
+            "2026-06-22",
+            "2026-06-23",
+            "2026-06-24",
+            "2026-06-25",
+            "2026-06-26",
+            "2026-06-29",
+            "2026-06-30",
+            "2026-07-01",
+            "2026-07-02",
+            "2026-07-03",
+            "2026-07-06",
+            "2026-07-07",
+            "2026-07-08",
+            "2026-07-09",
+            "2026-07-10",
+            "2026-07-13",
+            "2026-07-14",
+            "2026-07-15",
+            "2026-07-16",
+            "2026-07-17",
+            "2026-07-20",
+            "2026-07-21",
+            "2026-07-22",
+            "2026-07-23",
+            "2026-07-24",
+            "2026-07-27",
+            "2026-07-28",
+            "2026-07-29",
+            "2026-07-30",
+            "2026-07-31",
+            "2026-08-03",
+            "2026-08-04",
+            "2026-08-05",
+            "2026-08-06",
+            "2026-08-07",
+            "2026-08-10",
+            "2026-08-11",
+            "2026-08-12",
+            "2026-08-13",
+            "2026-08-14",
+            "2026-08-17",
+            "2026-08-18",
+            "2026-08-19",
+            "2026-08-20",
+            "2026-08-21",
+            "2026-08-24",
+            "2026-08-25",
+            "2026-08-26",
+            "2026-08-27",
+            "2026-08-28",
+            "2026-08-31",
+            "2026-09-01",
+            "2026-09-02",
+            "2026-09-03",
+            "2026-09-04",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-14",
+            "2026-09-15"
+          ],
+          "xaxis": "x",
+          "y": {
+            "dtype": "f8",
+            "bdata": "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"
+          },
+          "yaxis": "y",
+          "type": "scatter"
+        }
+      ],
+      "layout": {
+        "template": {
+          "data": {
+            "barpolar": [
+              {
+                "marker": {
+                  "line": {
+                    "color": "white",
+                    "width": 0.5
+                  },
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "barpolar"
+              }
+            ],
+            "bar": [
+              {
+                "error_x": {
+                  "color": "#2a3f5f"
+                },
+                "error_y": {
+                  "color": "#2a3f5f"
+                },
+                "marker": {
+                  "line": {
+                    "color": "white",
+                    "width": 0.5
+                  },
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "bar"
+              }
+            ],
+            "carpet": [
+              {
+                "aaxis": {
+                  "endlinecolor": "#2a3f5f",
+                  "gridcolor": "#C8D4E3",
+                  "linecolor": "#C8D4E3",
+                  "minorgridcolor": "#C8D4E3",
+                  "startlinecolor": "#2a3f5f"
+                },
+                "baxis": {
+                  "endlinecolor": "#2a3f5f",
+                  "gridcolor": "#C8D4E3",
+                  "linecolor": "#C8D4E3",
+                  "minorgridcolor": "#C8D4E3",
+                  "startlinecolor": "#2a3f5f"
+                },
+                "type": "carpet"
+              }
+            ],
+            "choropleth": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "type": "choropleth"
+              }
+            ],
+            "contourcarpet": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "type": "contourcarpet"
+              }
+            ],
+            "contour": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "contour"
+              }
+            ],
+            "heatmap": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "heatmap"
+              }
+            ],
+            "histogram2dcontour": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "histogram2dcontour"
+              }
+            ],
+            "histogram2d": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "histogram2d"
+              }
+            ],
+            "histogram": [
+              {
+                "marker": {
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "histogram"
+              }
+            ],
+            "mesh3d": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "type": "mesh3d"
+              }
+            ],
+            "parcoords": [
+              {
+                "line": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "parcoords"
+              }
+            ],
+            "pie": [
+              {
+                "automargin": true,
+                "type": "pie"
+              }
+            ],
+            "scatter3d": [
+              {
+                "line": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scatter3d"
+              }
+            ],
+            "scattercarpet": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scattercarpet"
+              }
+            ],
+            "scattergeo": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scattergeo"
+              }
+            ],
+            "scattergl": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scattergl"
+              }
+            ],
+            "scattermap": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scattermap"
+              }
+            ],
+            "scatterpolargl": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scatterpolargl"
+              }
+            ],
+            "scatterpolar": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scatterpolar"
+              }
+            ],
+            "scatter": [
+              {
+                "fillpattern": {
+                  "fillmode": "overlay",
+                  "size": 10,
+                  "solidity": 0.2
+                },
+                "type": "scatter"
+              }
+            ],
+            "scatterternary": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scatterternary"
+              }
+            ],
+            "surface": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "surface"
+              }
+            ],
+            "table": [
+              {
+                "cells": {
+                  "fill": {
+                    "color": "#EBF0F8"
+                  },
+                  "line": {
+                    "color": "white"
+                  }
+                },
+                "header": {
+                  "fill": {
+                    "color": "#C8D4E3"
+                  },
+                  "line": {
+                    "color": "white"
+                  }
+                },
+                "type": "table"
+              }
+            ]
+          },
+          "layout": {
+            "annotationdefaults": {
+              "arrowcolor": "#2a3f5f",
+              "arrowhead": 0,
+              "arrowwidth": 1
+            },
+            "autotypenumbers": "strict",
+            "coloraxis": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "colorscale": {
+              "diverging": [
+                [
+                  0,
+                  "#8e0152"
+                ],
+                [
+                  0.1,
+                  "#c51b7d"
+                ],
+                [
+                  0.2,
+                  "#de77ae"
+                ],
+                [
+                  0.3,
+                  "#f1b6da"
+                ],
+                [
+                  0.4,
+                  "#fde0ef"
+                ],
+                [
+                  0.5,
+                  "#f7f7f7"
+                ],
+                [
+                  0.6,
+                  "#e6f5d0"
+                ],
+                [
+                  0.7,
+                  "#b8e186"
+                ],
+                [
+                  0.8,
+                  "#7fbc41"
+                ],
+                [
+                  0.9,
+                  "#4d9221"
+                ],
+                [
+                  1,
+                  "#276419"
+                ]
+              ],
+              "sequential": [
+                [
+                  0.0,
+                  "#0d0887"
+                ],
+                [
+                  0.1111111111111111,
+                  "#46039f"
+                ],
+                [
+                  0.2222222222222222,
+                  "#7201a8"
+                ],
+                [
+                  0.3333333333333333,
+                  "#9c179e"
+                ],
+                [
+                  0.4444444444444444,
+                  "#bd3786"
+                ],
+                [
+                  0.5555555555555556,
+                  "#d8576b"
+                ],
+                [
+                  0.6666666666666666,
+                  "#ed7953"
+                ],
+                [
+                  0.7777777777777778,
+                  "#fb9f3a"
+                ],
+                [
+                  0.8888888888888888,
+                  "#fdca26"
+                ],
+                [
+                  1.0,
+                  "#f0f921"
+                ]
+              ],
+              "sequentialminus": [
+                [
+                  0.0,
+                  "#0d0887"
+                ],
+                [
+                  0.1111111111111111,
+                  "#46039f"
+                ],
+                [
+                  0.2222222222222222,
+                  "#7201a8"
+                ],
+                [
+                  0.3333333333333333,
+                  "#9c179e"
+                ],
+                [
+                  0.4444444444444444,
+                  "#bd3786"
+                ],
+                [
+                  0.5555555555555556,
+                  "#d8576b"
+                ],
+                [
+                  0.6666666666666666,
+                  "#ed7953"
+                ],
+                [
+                  0.7777777777777778,
+                  "#fb9f3a"
+                ],
+                [
+                  0.8888888888888888,
+                  "#fdca26"
+                ],
+                [
+                  1.0,
+                  "#f0f921"
+                ]
+              ]
+            },
+            "colorway": [
+              "#636efa",
+              "#EF553B",
+              "#00cc96",
+              "#ab63fa",
+              "#FFA15A",
+              "#19d3f3",
+              "#FF6692",
+              "#B6E880",
+              "#FF97FF",
+              "#FECB52"
+            ],
+            "font": {
+              "color": "#2a3f5f"
+            },
+            "geo": {
+              "bgcolor": "white",
+              "lakecolor": "white",
+              "landcolor": "white",
+              "showlakes": true,
+              "showland": true,
+              "subunitcolor": "#C8D4E3"
+            },
+            "hoverlabel": {
+              "align": "left"
+            },
+            "hovermode": "closest",
+            "paper_bgcolor": "white",
+            "plot_bgcolor": "white",
+            "polar": {
+              "angularaxis": {
+                "gridcolor": "#EBF0F8",
+                "linecolor": "#EBF0F8",
+                "ticks": ""
+              },
+              "bgcolor": "white",
+              "radialaxis": {
+                "gridcolor": "#EBF0F8",
+                "linecolor": "#EBF0F8",
+                "ticks": ""
+              }
+            },
+            "scene": {
+              "xaxis": {
+                "backgroundcolor": "white",
+                "gridcolor": "#DFE8F3",
+                "gridwidth": 2,
+                "linecolor": "#EBF0F8",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#EBF0F8"
+              },
+              "yaxis": {
+                "backgroundcolor": "white",
+                "gridcolor": "#DFE8F3",
+                "gridwidth": 2,
+                "linecolor": "#EBF0F8",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#EBF0F8"
+              },
+              "zaxis": {
+                "backgroundcolor": "white",
+                "gridcolor": "#DFE8F3",
+                "gridwidth": 2,
+                "linecolor": "#EBF0F8",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#EBF0F8"
+              }
+            },
+            "shapedefaults": {
+              "line": {
+                "color": "#2a3f5f"
+              }
+            },
+            "ternary": {
+              "aaxis": {
+                "gridcolor": "#DFE8F3",
+                "linecolor": "#A2B1C6",
+                "ticks": ""
+              },
+              "baxis": {
+                "gridcolor": "#DFE8F3",
+                "linecolor": "#A2B1C6",
+                "ticks": ""
+              },
+              "bgcolor": "white",
+              "caxis": {
+                "gridcolor": "#DFE8F3",
+                "linecolor": "#A2B1C6",
+                "ticks": ""
+              }
+            },
+            "title": {
+              "x": 0.05
+            },
+            "xaxis": {
+              "automargin": true,
+              "gridcolor": "#EBF0F8",
+              "linecolor": "#EBF0F8",
+              "ticks": "",
+              "title": {
+                "standoff": 15
+              },
+              "zerolinecolor": "#EBF0F8",
+              "zerolinewidth": 2
+            },
+            "yaxis": {
+              "automargin": true,
+              "gridcolor": "#EBF0F8",
+              "linecolor": "#EBF0F8",
+              "ticks": "",
+              "title": {
+                "standoff": 15
+              },
+              "zerolinecolor": "#EBF0F8",
+              "zerolinewidth": 2
+            }
+          }
+        },
+        "xaxis": {
+          "anchor": "y",
+          "domain": [
+            0.0,
+            1.0
+          ],
+          "title": {}
+        },
+        "yaxis": {
+          "anchor": "x",
+          "domain": [
+            0.0,
+            1.0
+          ],
+          "title": {
+            "text": "NMR"
+          }
+        },
+        "legend": {
+          "title": {},
+          "tracegroupgap": 0
+        },
+        "margin": {
+          "t": 48,
+          "l": 8,
+          "r": 8,
+          "b": 8
+        },
+        "title": {
+          "text": "Cumulative payout"
+        },
+        "paper_bgcolor": "rgba(0,0,0,0)",
+        "plot_bgcolor": "rgba(0,0,0,0)",
+        "height": 340
+      }
+    }
+  ],
+  "datasets": {},
+  "schema": 1,
+  "data": "real",
+  "notebook_sha256": "4452c13e579e7034be6c96669a7e1a47844ea7bd4f203848737d340be5902594",
+  "captured_at": "2026-09-16T13:48:19+00:00",
+  "label": "Account \u00b7 crowdcent",
+  "parameters": [
+    "--account=crowdcent"
+  ],
+  "api_url": null
+}

@@ -2,6 +2,7 @@
 
 import json
 import time
+import warnings
 
 import polars as pl
 import urllib3
@@ -73,13 +74,23 @@ def models(account):
     }
     """
     rows = []
+    failures = []
     for tournament, number in TOURNAMENTS.items():
-        data = graphql(query, {"username": account, "tournament": number})
+        try:
+            data = graphql(query, {"username": account, "tournament": number})
+        except (urllib3.exceptions.HTTPError, RuntimeError) as exc:
+            failures.append(tournament)
+            warnings.warn(
+                f"{tournament.capitalize()} is unavailable: {exc}", stacklevel=2
+            )
+            continue
         profile = data["accountProfile"] or {}
         rows += [
             {"tournament": tournament, "model": model["displayName"], "id": model["id"]}
             for model in profile.get("models") or []
         ]
+    if len(failures) == len(TOURNAMENTS):
+        raise RuntimeError("All Numerai tournaments are unavailable. Try again later.")
     return pl.DataFrame(
         rows, schema={"tournament": pl.String, "model": pl.String, "id": pl.String}
     )
@@ -92,6 +103,7 @@ def rounds(models, days=365, tick=None):
     batches of three; ``tick`` is called with each batch's size.
     """
     rows = []
+    attempted = answered = 0
     for tournament, number in TOURNAMENTS.items():
         ids = models.filter(pl.col("tournament") == tournament)["id"].to_list()
         for start in range(0, len(ids), 3):
@@ -103,13 +115,24 @@ def rounds(models, days=365, tick=None):
                 "{ roundNumber roundResolved roundResolveTime atRisk payout }"
                 for i, model_id in enumerate(batch)
             )
-            data = graphql("query { " + aliases + " }")
+            attempted += 1
+            try:
+                data = graphql("query { " + aliases + " }")
+            except (urllib3.exceptions.HTTPError, RuntimeError) as exc:
+                warnings.warn(
+                    f"{tournament.capitalize()} rounds are incomplete: {exc}",
+                    stacklevel=2,
+                )
+                if tick:
+                    tick(len(batch))
+                continue
+            answered += 1
             for i, model_id in enumerate(batch):
                 rows += [
                     {
                         "id": model_id,
                         "round": entry["roundNumber"],
-                        "date": entry["roundResolveTime"][:10],
+                        "date": (entry.get("roundResolveTime") or "")[:10] or None,
                         "resolved": bool(entry["roundResolved"]),
                         "at_risk": float(entry["atRisk"] or 0),
                         "payout": float(entry["payout"] or 0),
@@ -118,6 +141,10 @@ def rounds(models, days=365, tick=None):
                 ]
             if tick:
                 tick(len(batch))
+    if attempted and not answered:
+        raise RuntimeError(
+            "Numerai could not return rounds for any model. Try again later."
+        )
     schema = {
         "id": pl.String,
         "round": pl.Int64,
@@ -152,11 +179,15 @@ def scores(model, tournament):
             "date": entry["roundResolveTime"][:10],
             "metric": metric,
             "value": entry[metric],
-            "percentile": 100 * entry[f"{metric}Percentile"],
+            "percentile": (
+                100 * entry[f"{metric}Percentile"]
+                if entry.get(f"{metric}Percentile") is not None
+                else None
+            ),
         }
         for entry in profile.get("roundModelPerformances") or []
         for metric in (first, second)
-        if entry.get(metric) is not None
+        if entry.get(metric) is not None and entry.get("roundResolveTime")
     ]
     schema = {
         "round": pl.Int64,

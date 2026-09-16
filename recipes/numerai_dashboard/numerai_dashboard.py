@@ -13,6 +13,15 @@
 #
 # [tool.crowdcent.cloud]
 # default_view = "app"
+#
+# [tool.crowdcent.thumbnail]
+# title = "Cumulative payouts"
+# output = "figure"
+# figure = "cumulative"
+# label = "Account · crowdcent"
+# badge = "PUBLIC DATA"
+# args = ["--account=crowdcent"]
+# y_suffix = " NMR"
 # ///
 
 import marimo
@@ -23,13 +32,15 @@ app = marimo.App(width="full")
 
 @app.cell
 def _():
+    import os
+
     import marimo as mo
     import plotly.express as px
     import polars as pl
 
     import numerai
 
-    return mo, numerai, pl, px
+    return mo, numerai, os, pl, px
 
 
 @app.cell
@@ -39,6 +50,9 @@ def _(mo):
 
     Payouts, stake at risk, and per-model scores for any Numerai account, read
     live from Numerai's public API. Nothing here needs a key.
+
+    Cloud runs read `crowdcent` by default. Set a run parameter such as
+    `account=your_account` to choose another account.
     """)
     return
 
@@ -53,11 +67,17 @@ def _(mo):
 
 
 @app.cell
-def _(account, mo, numerai):
-    mo.stop(account.value is None, mo.md("Press **Go** to read the account."))
-    models = numerai.models(account.value)
+def _(account, mo, numerai, os):
+    account_name = mo.cli_args().get("account") or account.value
     mo.stop(
-        models.is_empty(), mo.md(f"Numerai has no models under **{account.value}**.")
+        not account_name and not os.environ.get("CROWDCENT_RUN_ID"),
+        mo.md("Press **Go** to read the account."),
+    )
+    account_name = str(account_name or "crowdcent").strip()
+    models = numerai.models(account_name)
+    mo.stop(
+        models.is_empty(),
+        mo.md(f"Numerai has no models under **{account_name}**."),
     )
     with mo.status.progress_bar(
         total=len(models), title="Reading rounds", remove_on_exit=True

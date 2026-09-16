@@ -1,6 +1,6 @@
 # /// script
 # dependencies = [
-#     "crowdcent-challenge",
+#     "crowdcent-challenge>=0.1.21",
 #     "joblib",
 #     "marimo",
 #     "numpy",
@@ -15,6 +15,17 @@
 # [tool.marimo.opengraph]
 # title = "Tune a model with Optuna"
 # description = "Search XGBoost settings on CrowdCent's training data, from a form in the browser or with defaults and optional parameters on Cloud."
+#
+# [tool.crowdcent.thumbnail]
+# title = "XGBoost trial results"
+# output = "figure"
+# figure = "trial_figure"
+# label = "24 trials · XGBoost"
+# badge = "VALIDATION"
+# args = ["--trials=24", "--depth_max=8"]
+# x_label = "Learning rate"
+# y_label = "Mean daily Spearman"
+# needs_api_key = true
 # ///
 
 import marimo
@@ -56,8 +67,8 @@ def _(mo):
 
     The notebook charts every trial and names the best one. It saves the
     trials to `trials/<name>.csv` and the best model to `models/<name>.joblib`
-    in the project folder, where they show under History and a prediction job
-    in the same project can load them.
+    under the run's output directory (locally, `out/`). Download those files
+    from the run report or publish them to the project store for another job.
     """)
     return
 
@@ -116,6 +127,16 @@ def _(DEFAULTS, mo, os, search_form):
         ),
     )
     search = {**DEFAULTS, **(answered or {})}
+    if not str(search["name"]).replace("_", "").replace("-", "").isalnum():
+        raise ValueError(
+            "Save as must contain only letters, numbers, underscores, and hyphens."
+        )
+    if search["target"] not in ("target_10d", "target_30d"):
+        raise ValueError("Target must be target_10d or target_30d.")
+    if not 1 <= int(search["trials"]) <= 200 or not 2 <= int(search["depth_max"]) <= 12:
+        raise ValueError("Choose 1–200 trials and a maximum depth of 2–12.")
+    if not all(0 < float(search[key]) <= 1 for key in ("lr_min", "lr_max")):
+        raise ValueError("Learning rates must be greater than zero and at most one.")
     search
     return (search,)
 
@@ -132,6 +153,10 @@ def _(cc, dt, pl, search):
     train_end = dates[int(len(dates) * 0.8)]
     train = data.filter(pl.col("date") <= train_end)
     valid = data.filter(pl.col("date") > train_end + dt.timedelta(days=31))
+    if not features or train.is_empty() or valid.is_empty():
+        raise ValueError(
+            "Training data needs features and enough dates for a 31-day purged validation split."
+        )
     return data, features, train, valid
 
 
@@ -164,9 +189,9 @@ def _(XGBRegressor, features, optuna, os, pl, search, train, valid):
     study = optuna.create_study(
         direction="maximize", sampler=optuna.samplers.TPESampler(seed=0)
     )
-    # One trial per core at a time, each model on one thread.
+    # Bound parallel trials: every concurrent fit holds another training matrix.
     study.optimize(
-        objective, n_trials=int(search["trials"]), n_jobs=os.cpu_count() or 1
+        objective, n_trials=int(search["trials"]), n_jobs=min(2, os.cpu_count() or 1)
     )
     return (study,)
 
@@ -180,20 +205,19 @@ def _(mo, pl, px, study):
             if t.value is not None
         ]
     )
+    trial_figure = px.scatter(
+        trials,
+        x="learning_rate",
+        y="score",
+        color="max_depth",
+        log_x=True,
+        title="Every trial",
+        template="plotly_dark" if mo.app_meta().theme == "dark" else "plotly_white",
+    )
     mo.vstack(
         [
             mo.md(f"Best score **{study.best_value:.4f}** after {len(trials)} trials."),
-            px.scatter(
-                trials,
-                x="learning_rate",
-                y="score",
-                color="max_depth",
-                log_x=True,
-                title="Every trial",
-                template="plotly_dark"
-                if mo.app_meta().theme == "dark"
-                else "plotly_white",
-            ),
+            trial_figure,
             trials.sort("score", descending=True),
         ]
     )
@@ -201,14 +225,15 @@ def _(mo, pl, px, study):
 
 
 @app.cell
-def _(XGBRegressor, data, features, joblib, pathlib, search, study, trials):
-    model = XGBRegressor(**study.best_params, n_jobs=-1)
+def _(XGBRegressor, data, features, joblib, os, pathlib, search, study, trials):
+    model = XGBRegressor(**study.best_params, n_jobs=2)
     model.fit(data[features].to_numpy(), data[search["target"]].to_numpy())
+    out = pathlib.Path(os.environ.get("CROWDCENT_OUT_DIR", "out"))
     for folder in ("models", "trials"):
-        pathlib.Path(folder).mkdir(exist_ok=True)
-    joblib.dump(model, f"models/{search['name']}.joblib")
-    trials.write_csv(f"trials/{search['name']}.csv")
-    print(f"saved models/{search['name']}.joblib and trials/{search['name']}.csv")
+        (out / folder).mkdir(parents=True, exist_ok=True)
+    joblib.dump(model, out / "models" / f"{search['name']}.joblib")
+    trials.write_csv(out / "trials" / f"{search['name']}.csv")
+    print(f"saved {out / 'models'} and {out / 'trials'}")
     return
 
 

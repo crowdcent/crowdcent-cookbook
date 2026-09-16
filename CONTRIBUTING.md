@@ -15,7 +15,9 @@ Before opening a pull request:
 
 ```bash
 uv run marimo check --strict --ignore-scripts recipes
+uv sync --locked --group thumbnails
 uv run python -m unittest discover -s tests
+uv run python scripts/thumbnails.py --check --preview
 ```
 
 ## The notebook
@@ -31,6 +33,113 @@ default_view = "app"
 
 This is a presentation default only. Nothing a notebook declares about itself
 grants credentials or network access.
+
+## Recipe card previews
+
+Every recipe needs a 1200 × 630 PNG generated from a real notebook result.
+The small output snapshot, image, and capture receipt are committed together
+under `recipes/<name>/__marimo__/assets/<name>/`. The snapshot contains only
+the selected chart or small artifact, source/date labels, and input hashes;
+raw datasets and credentials stay out of Git.
+
+### Review or change the presentation (no key needed)
+
+```bash
+uv sync --locked --group thumbnails
+uv run python scripts/thumbnails.py --check --preview
+# To render again, after editing thumbnail styles or labels:
+uv run playwright install chromium
+uv run python scripts/thumbnails.py --preview
+# --recipe numerai_dashboard limits either command to one recipe.
+```
+
+The gallery is `out/thumbnails/index.html`: open it directly, resize it to
+check mobile readability, and click a card to download its PNG. It is one
+self-contained HTML file and works offline. Rendering uses the committed
+real output snapshots, never the notebook APIs; the browser blocks network
+requests. Neither CI nor a contributor reviewing a fork needs an API key.
+
+### Add a recipe or refresh its data
+
+Declare the thumbnail beside the notebook's OpenGraph metadata:
+
+```toml
+[tool.crowdcent.thumbnail]
+title = "Cumulative payouts"
+output = "figure"
+figure = "cumulative"
+label = "Account · crowdcent"
+args = ["--account=crowdcent"]
+```
+
+`output` is `figure` (a Plotly chart named by `figure`), a relative `.csv`
+table, or a small `.json` artifact under `CROWDCENT_OUT_DIR`. Name the actual
+figure variable in the notebook; no thumbnail-only computation is needed.
+Optional presentation settings include `badge`, `x_label`, `y_label`,
+`y_suffix`, `legend`/`legend_prefix`, and CSV `sort`/`columns`. Keep labels accurate and
+readable at card size; preserve plotted values. Set `needs_api_key = true`
+for CrowdCent data and `account_label = true` when the chart shows that key
+owner's performance.
+
+```bash
+# Public Numerai data: no key needed, but this DOES contact the API.
+uv run python scripts/thumbnails.py --capture --recipe numerai_dashboard --preview
+
+# CrowdCent recipes: use your normal key from the environment.
+# Set COOKBOOK_CAPTURE_ACCOUNT=jrai only when capturing jrai's results.
+uv run python scripts/thumbnails.py --capture --recipe track_your_performance --preview
+```
+
+`--capture` executes trusted recipe code using its declared PEP 723
+requirements. It does real downloads, fitting, and backtesting. CrowdCent
+recipes need `CROWDCENT_API_KEY`; account previews also require
+`COOKBOOK_CAPTURE_ACCOUNT` with the key owner's public account name. For a
+local API, set `COOKBOOK_API_URL`. The capture guard rejects client writes,
+including submissions, and does not set the Cloud run ID. This guard is
+accidental-write protection, not a sandbox for untrusted notebooks.
+
+Only explicitly selected output becomes public. Review `output.json` as
+well as the image before committing, especially for account data. Missing
+or empty output and API failures stop capture; there is no synthetic-data
+fallback. A failed capture/render leaves existing assets untouched. The
+footer records the account/source and latest data date (or capture date
+for an artifact with no dates). A date is provenance, not a freshness SLA.
+
+Commit `output.json`, `opengraph.png`, and `capture.json` together. Notebook
+computation, helper, parameter, or dependency edits require a new capture.
+Presentation or renderer changes can reuse the snapshot and only need a
+render. Do not edit hashes or mark fixture data as a real capture.
+
+### What happens on a pull request and on main
+
+The `validate` workflow discovers every recipe, checks its declarations,
+real-output snapshot, source hashes, image hash, PNG dimensions and decoding,
+then executes recipe tests with isolated API fixtures. It also renders all
+snapshots without credentials and uploads a downloadable `thumbnail-gallery`
+artifact. The same workflow runs on pull requests, main, and manual dispatch.
+Make `validate` a required status check on main so missing/stale thumbnails
+block merging. The committed check runs **before** regeneration, so CI
+cannot silently repair an incomplete pull request and let it through.
+
+Images reach main in the same merge as their notebooks. Cloud loads the
+commit-pinned PNG with its recipe on the next catalog refresh (currently
+up to five minutes); no Django deployment or asset-publishing bot is needed.
+API keys, repository write permissions, schedules, and generated commits
+are unnecessary. Fresh market/account data is captured deliberately and
+reviewed in a normal pull request; pushes do not rerun live training.
+
+## Execution checks
+
+CI executes every complete notebook using `marimo export html`, the same
+entry point Cloud uses. Tests exercise the real client, model fitting,
+plots, unattended defaults, interactive gates, artifact files, empty data,
+and failures, with network calls replaced by controlled API responses.
+Update those responses when an upstream API changes; fixtures are test
+inputs only and must never become recipe fallbacks.
+
+Before release, also check browser previews and a hosted run. Local exports
+cannot prove hosted package installation, network policy, credit charging,
+artifact delivery, or the next occurrence of a schedule.
 
 ## Checklist
 

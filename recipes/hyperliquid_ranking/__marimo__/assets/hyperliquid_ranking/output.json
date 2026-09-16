@@ -1,0 +1,52 @@
+{
+  "figures": [],
+  "datasets": {
+    "inference_data.parquet": {
+      "sha256": "ec3e14e50c267b70dcd3014c2228721c7cda60a97693aff301205bee79f409c4",
+      "through": "2026-08-30"
+    },
+    "training_data.parquet": {
+      "sha256": "27d42321c359f6d65a6f692fa2a419abba23ed4993bae4b2af57568ff4504c04",
+      "through": "2026-06-20"
+    }
+  },
+  "artifact": [
+    {
+      "id": "HMSTR",
+      "pred_10d": 0.6700073,
+      "pred_30d": 0.9388414
+    },
+    {
+      "id": "TRX",
+      "pred_10d": 0.5226136,
+      "pred_30d": 0.80040205
+    },
+    {
+      "id": "LINK",
+      "pred_10d": 0.5427984,
+      "pred_30d": 0.7862321
+    },
+    {
+      "id": "CC",
+      "pred_10d": 0.6027904,
+      "pred_30d": 0.7795136
+    },
+    {
+      "id": "NOT",
+      "pred_10d": 0.43368003,
+      "pred_30d": 0.75879556
+    },
+    {
+      "id": "BANANA",
+      "pred_10d": 0.60178095,
+      "pred_30d": 0.7550871
+    }
+  ],
+  "schema": 1,
+  "data": "real",
+  "notebook_sha256": "e36155619a592172ed00f5f8e00e022e1b71263203edd49b001fd79669807fd0",
+  "captured_at": "2026-09-16T13:47:33+00:00",
+  "label": "Model predictions",
+  "parameters": [],
+  "api_url": "http://127.0.0.1:8797/api"
+}

@@ -1,6 +1,6 @@
 # /// script
 # dependencies = [
-#     "crowdcent-challenge",
+#     "crowdcent-challenge>=0.1.21",
 #     "marimo",
 #     "polars",
 #     "pyarrow",
@@ -11,6 +11,15 @@
 # [tool.marimo.opengraph]
 # title = "Hyperliquid ranking, end to end"
 # description = "Train a gradient booster on CrowdCent's training data, predict the latest inference release, and submit."
+#
+# [tool.crowdcent.thumbnail]
+# title = "10d / 30d predictions"
+# output = "predictions.csv"
+# label = "Model predictions"
+# badge = "MODEL OUTPUT"
+# sort = "pred_30d"
+# columns = {id = "ASSET", pred_10d = "10-DAY RANK", pred_30d = "30-DAY RANK"}
+# needs_api_key = true
 # ///
 
 import marimo
@@ -64,12 +73,17 @@ def _(client, pl):
 
 
 @app.cell
-def _(XGBRegressor, training_data):
+def _(XGBRegressor, pl, training_data):
     features = [c for c in training_data.columns if c.startswith("feature")]
     targets = ["target_10d", "target_30d"]
 
-    model = XGBRegressor(n_estimators=200)
-    model.fit(training_data[features].to_numpy(), training_data[targets].to_numpy())
+    labeled = training_data.filter(pl.all_horizontal(pl.col(targets).is_finite()))
+    if not features or labeled.is_empty():
+        raise ValueError(
+            "Training data needs features and resolved 10-day and 30-day targets."
+        )
+    model = XGBRegressor(n_estimators=200, n_jobs=2, random_state=0)
+    model.fit(labeled[features].to_numpy(), labeled[targets].to_numpy())
     return features, model
 
 
@@ -93,6 +107,16 @@ def _(features, inference_data, model, pl):
     )
     predictions.sort("pred_30d", descending=True)
     return (predictions,)
+
+
+@app.cell
+def _(os, predictions):
+    from pathlib import Path
+
+    output = Path(os.environ.get("CROWDCENT_OUT_DIR", "out"))
+    output.mkdir(parents=True, exist_ok=True)
+    predictions.write_csv(output / "predictions.csv")
+    return
 
 
 @app.cell
