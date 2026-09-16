@@ -11,3 +11,9 @@ dependencies = []
 
 [dependency-groups]
 dev = ["marimo==0.24.1"]
+test = ["crowdcent-challenge>=0.1.21", "joblib", "numpy", "optuna", "plotly", "polars", "pyarrow", "scikit-learn", "urllib3", "xgboost"]
+thumbnails = [
+    {include-group = "test"},
+    "pillow>=11",
+    "playwright==1.57.0",
+]

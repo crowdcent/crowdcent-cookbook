@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "data": "real",
+  "source_sha256": "dff5aa7d9ec191b762dbbf05c7fa8e018067c7dc647489af16887d56af55fb71",
+  "image_sha256": "901a82f4e3cb60a81e70f9a28d3cf0584a63a1a5e8f50c4646e1df3d13da9a1e",
+  "captured_at": "2026-09-16T13:51:08+00:00",
+  "data_through": "2026-06-20",
+  "label": "24 trials \u00b7 XGBoost"
+}

@@ -7,6 +7,12 @@
 # [tool.marimo.opengraph]
 # title = "Hello, Cloud"
 # description = "Tell a Cloud run from a tab, and leave a file behind for the run report."
+#
+# [tool.crowdcent.thumbnail]
+# title = "Your first run artifact"
+# output = "hello.json"
+# label = "Actual hello.json artifact"
+# badge = "LOCAL RUN"
 # ///
 
 import marimo
@@ -51,7 +57,7 @@ def _(mo, os):
 @app.cell
 def _(json, os, pathlib, run_id):
     out = pathlib.Path(os.environ.get("CROWDCENT_OUT_DIR", "out"))
-    out.mkdir(exist_ok=True)
+    out.mkdir(parents=True, exist_ok=True)
     (out / "hello.json").write_text(json.dumps({"greeting": "hello", "run": run_id}))
     print(f"wrote {out / 'hello.json'}")
     return

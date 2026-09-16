@@ -1,6 +1,6 @@
 # /// script
 # dependencies = [
-#     "crowdcent-challenge",
+#     "crowdcent-challenge>=0.1.21",
 #     "marimo",
 #     "plotly",
 #     "polars",
@@ -9,6 +9,15 @@
 # [tool.marimo.opengraph]
 # title = "Track your performance"
 # description = "Every scored submission you have made, by slot, over time."
+#
+# [tool.crowdcent.thumbnail]
+# title = "Composite percentile"
+# output = "figure"
+# figure = "figure"
+# label = "Account performance"
+# needs_api_key = true
+# account_label = true
+# legend_prefix = "Slot "
 # ///
 
 import marimo
@@ -45,15 +54,23 @@ def _(mo):
 @app.cell
 def _(cc, mo, pl):
     client = cc.ChallengeClient("hyperliquid-ranking")
-    history = pl.DataFrame(client.get_performance())
+    history = pl.DataFrame(client.get_performance(), strict=False)
     mo.stop(
         history.is_empty(),
         mo.md(
             "No scored submissions yet. Submit predictions and come back after they are scored."
         ),
     )
+    mo.stop(
+        "composite_percentile" not in history.columns,
+        mo.md(
+            "Your submissions have scores, but composite percentiles are not available yet."
+        ),
+    )
     history = history.with_columns(
-        pl.col("release_date").str.to_date(), pl.col("slot").cast(pl.String)
+        pl.col("release_date").str.to_date(),
+        pl.col("slot").cast(pl.String),
+        pl.col("composite_percentile").cast(pl.Float64),
     ).sort("release_date")
     history.select("release_date", "slot", "status", "composite_percentile").sort(
         "release_date", descending=True

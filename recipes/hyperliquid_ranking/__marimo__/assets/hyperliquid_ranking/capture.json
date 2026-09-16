@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "data": "real",
+  "source_sha256": "9cdd5e22b7f129e4a1868bd0612c403a7acc99d0773a53ff7190316d81415889",
+  "image_sha256": "c886cacedd94be19a90c0be832bc491596e2e110b906d9fba1d1b9689625e4bb",
+  "captured_at": "2026-09-16T13:47:33+00:00",
+  "data_through": "2026-08-30",
+  "label": "Model predictions"
+}

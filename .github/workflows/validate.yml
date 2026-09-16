@@ -4,19 +4,31 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v6
+      - uses: actions/checkout@v7.0.1
+      - uses: astral-sh/setup-uv@v10.1.0
         with:
           python-version: "3.12"
           enable-cache: true
-      - run: uv sync --locked
-      - run: uv run marimo check --strict --ignore-scripts recipes
-      - run: uv run python -m unittest discover -s tests
+      - run: uv sync --locked --group thumbnails
+      - run: uv run --no-sync marimo check --strict --ignore-scripts recipes
+      - name: Check committed thumbnails before regenerating anything
+        run: uv run --no-sync python scripts/thumbnails.py --check
+      - run: uv run --no-sync python -m unittest discover -s tests
+      - run: uv run --no-sync playwright install --with-deps chromium
+      - name: Render real output snapshots without API credentials
+        run: uv run --no-sync python scripts/thumbnails.py
+      - uses: actions/upload-artifact@v7.0.1
+        with:
+          name: thumbnail-gallery
+          path: out/thumbnails/index.html
+          if-no-files-found: error

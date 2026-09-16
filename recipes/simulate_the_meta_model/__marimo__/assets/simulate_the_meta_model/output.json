@@ -1,0 +1,1770 @@
+{
+  "figures": [
+    {
+      "data": [
+        {
+          "hovertemplate": "=%{x}<br>Cumulative return=%{y}<extra></extra>",
+          "legendgroup": "strategy",
+          "line": {
+            "color": "#636efa",
+            "dash": "solid"
+          },
+          "marker": {
+            "symbol": "circle"
+          },
+          "mode": "lines",
+          "name": "strategy",
+          "orientation": "v",
+          "showlegend": true,
+          "x": [
+            "2025-06-05",
+            "2025-06-06",
+            "2025-06-07",
+            "2025-06-08",
+            "2025-06-09",
+            "2025-06-10",
+            "2025-06-11",
+            "2025-06-12",
+            "2025-06-13",
+            "2025-06-14",
+            "2025-06-15",
+            "2025-06-16",
+            "2025-06-17",
+            "2025-06-18",
+            "2025-06-19",
+            "2025-06-20",
+            "2025-06-21",
+            "2025-06-22",
+            "2025-06-23",
+            "2025-06-24",
+            "2025-06-25",
+            "2025-06-26",
+            "2025-06-27",
+            "2025-06-28",
+            "2025-06-29",
+            "2025-06-30",
+            "2025-07-01",
+            "2025-07-02",
+            "2025-07-03",
+            "2025-07-04",
+            "2025-07-05",
+            "2025-07-06",
+            "2025-07-07",
+            "2025-07-08",
+            "2025-07-09",
+            "2025-07-10",
+            "2025-07-11",
+            "2025-07-12",
+            "2025-07-13",
+            "2025-07-14",
+            "2025-07-15",
+            "2025-07-16",
+            "2025-07-17",
+            "2025-07-18",
+            "2025-07-19",
+            "2025-07-20",
+            "2025-07-21",
+            "2025-07-22",
+            "2025-07-23",
+            "2025-07-24",
+            "2025-07-25",
+            "2025-07-26",
+            "2025-07-27",
+            "2025-07-28",
+            "2025-07-29",
+            "2025-07-30",
+            "2025-07-31",
+            "2025-08-01",
+            "2025-08-02",
+            "2025-08-03",
+            "2025-08-04",
+            "2025-08-05",
+            "2025-08-06",
+            "2025-08-07",
+            "2025-08-08",
+            "2025-08-09",
+            "2025-08-10",
+            "2025-08-11",
+            "2025-08-12",
+            "2025-08-13",
+            "2025-08-14",
+            "2025-08-15",
+            "2025-08-16",
+            "2025-08-17",
+            "2025-08-18",
+            "2025-08-19",
+            "2025-08-20",
+            "2025-08-21",
+            "2025-08-22",
+            "2025-08-23",
+            "2025-08-24",
+            "2025-08-25",
+            "2025-08-26",
+            "2025-08-27",
+            "2025-08-28",
+            "2025-08-29",
+            "2025-08-30",
+            "2025-08-31",
+            "2025-09-01",
+            "2025-09-02",
+            "2025-09-03",
+            "2025-09-04",
+            "2025-09-05",
+            "2025-09-06",
+            "2025-09-07",
+            "2025-09-08",
+            "2025-09-09",
+            "2025-09-10",
+            "2025-09-11",
+            "2025-09-12",
+            "2025-09-13",
+            "2025-09-14",
+            "2025-09-15",
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-18",
+            "2025-09-19",
+            "2025-09-20",
+            "2025-09-21",
+            "2025-09-22",
+            "2025-09-23",
+            "2025-09-24",
+            "2025-09-25",
+            "2025-09-26",
+            "2025-09-27",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-09-30",
+            "2025-10-01",
+            "2025-10-02",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-05",
+            "2025-10-06",
+            "2025-10-07",
+            "2025-10-08",
+            "2025-10-09",
+            "2025-10-10",
+            "2025-10-11",
+            "2025-10-12",
+            "2025-10-13",
+            "2025-10-14",
+            "2025-10-15",
+            "2025-10-16",
+            "2025-10-17",
+            "2025-10-18",
+            "2025-10-19",
+            "2025-10-20",
+            "2025-10-21",
+            "2025-10-22",
+            "2025-10-23",
+            "2025-10-24",
+            "2025-10-25",
+            "2025-10-26",
+            "2025-10-27",
+            "2025-10-28",
+            "2025-10-29",
+            "2025-10-30",
+            "2025-10-31",
+            "2025-11-01",
+            "2025-11-02",
+            "2025-11-03",
+            "2025-11-04",
+            "2025-11-05",
+            "2025-11-06",
+            "2025-11-07",
+            "2025-11-08",
+            "2025-11-09",
+            "2025-11-10",
+            "2025-11-11",
+            "2025-11-12",
+            "2025-11-13",
+            "2025-11-14",
+            "2025-11-15",
+            "2025-11-16",
+            "2025-11-17",
+            "2025-11-18",
+            "2025-11-19",
+            "2025-11-20",
+            "2025-11-21",
+            "2025-11-22",
+            "2025-11-23",
+            "2025-11-24",
+            "2025-11-25",
+            "2025-11-26",
+            "2025-11-27",
+            "2025-11-28",
+            "2025-11-29",
+            "2025-11-30",
+            "2025-12-01",
+            "2025-12-02",
+            "2025-12-03",
+            "2025-12-04",
+            "2025-12-05",
+            "2025-12-06",
+            "2025-12-07",
+            "2025-12-08",
+            "2025-12-09",
+            "2025-12-10",
+            "2025-12-11",
+            "2025-12-12",
+            "2025-12-13",
+            "2025-12-14",
+            "2025-12-15",
+            "2025-12-16",
+            "2025-12-17",
+            "2025-12-18",
+            "2025-12-19",
+            "2025-12-20",
+            "2025-12-21",
+            "2025-12-22",
+            "2025-12-23",
+            "2025-12-24",
+            "2025-12-25",
+            "2025-12-26",
+            "2025-12-27",
+            "2025-12-28",
+            "2025-12-29",
+            "2025-12-30",
+            "2025-12-31",
+            "2026-01-01",
+            "2026-01-02",
+            "2026-01-03",
+            "2026-01-04",
+            "2026-01-05",
+            "2026-01-06",
+            "2026-01-07",
+            "2026-01-08",
+            "2026-01-09",
+            "2026-01-10",
+            "2026-01-11",
+            "2026-01-12",
+            "2026-01-13",
+            "2026-01-14",
+            "2026-01-15",
+            "2026-01-16",
+            "2026-01-17",
+            "2026-01-18",
+            "2026-01-19",
+            "2026-01-20",
+            "2026-01-21",
+            "2026-01-22",
+            "2026-01-23",
+            "2026-01-24",
+            "2026-01-25",
+            "2026-01-26",
+            "2026-01-27",
+            "2026-01-28",
+            "2026-01-29",
+            "2026-01-30",
+            "2026-01-31",
+            "2026-02-01",
+            "2026-02-02",
+            "2026-02-03",
+            "2026-02-04",
+            "2026-02-05",
+            "2026-02-06",
+            "2026-02-07",
+            "2026-02-08",
+            "2026-02-09",
+            "2026-02-10",
+            "2026-02-11",
+            "2026-02-12",
+            "2026-02-13",
+            "2026-02-14",
+            "2026-02-15",
+            "2026-02-16",
+            "2026-02-17",
+            "2026-02-18",
+            "2026-02-19",
+            "2026-02-20",
+            "2026-02-21",
+            "2026-02-22",
+            "2026-02-23",
+            "2026-02-24",
+            "2026-02-25",
+            "2026-02-26",
+            "2026-02-27",
+            "2026-02-28",
+            "2026-03-01",
+            "2026-03-02",
+            "2026-03-03",
+            "2026-03-04",
+            "2026-03-05",
+            "2026-03-06",
+            "2026-03-07",
+            "2026-03-08",
+            "2026-03-09",
+            "2026-03-10",
+            "2026-03-11",
+            "2026-03-12",
+            "2026-03-13",
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20",
+            "2026-03-21",
+            "2026-03-22",
+            "2026-03-23",
+            "2026-03-24",
+            "2026-03-25",
+            "2026-03-26",
+            "2026-03-27",
+            "2026-03-28",
+            "2026-03-29",
+            "2026-03-30",
+            "2026-03-31",
+            "2026-04-01",
+            "2026-04-02",
+            "2026-04-03",
+            "2026-04-04",
+            "2026-04-05",
+            "2026-04-06",
+            "2026-04-07",
+            "2026-04-08",
+            "2026-04-09",
+            "2026-04-10",
+            "2026-04-11",
+            "2026-04-12",
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19",
+            "2026-04-20",
+            "2026-04-21",
+            "2026-04-22",
+            "2026-04-23",
+            "2026-04-24",
+            "2026-04-25",
+            "2026-04-26",
+            "2026-04-27",
+            "2026-04-28",
+            "2026-04-29",
+            "2026-04-30",
+            "2026-05-01",
+            "2026-05-02",
+            "2026-05-03",
+            "2026-05-04",
+            "2026-05-05",
+            "2026-05-06",
+            "2026-05-07",
+            "2026-05-08",
+            "2026-05-09",
+            "2026-05-10",
+            "2026-05-11",
+            "2026-05-12",
+            "2026-05-13",
+            "2026-05-14",
+            "2026-05-15",
+            "2026-05-16",
+            "2026-05-17",
+            "2026-05-18",
+            "2026-05-19",
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-22",
+            "2026-05-23",
+            "2026-05-24",
+            "2026-05-25",
+            "2026-05-26",
+            "2026-05-27",
+            "2026-05-28",
+            "2026-05-29",
+            "2026-05-30",
+            "2026-05-31",
+            "2026-06-01",
+            "2026-06-02",
+            "2026-06-03",
+            "2026-06-04",
+            "2026-06-05",
+            "2026-06-06",
+            "2026-06-07",
+            "2026-06-08",
+            "2026-06-09",
+            "2026-06-10",
+            "2026-06-11",
+            "2026-06-12",
+            "2026-06-13",
+            "2026-06-14",
+            "2026-06-15",
+            "2026-06-16",
+            "2026-06-17",
+            "2026-06-18",
+            "2026-06-19",
+            "2026-06-20",
+            "2026-06-21",
+            "2026-06-22",
+            "2026-06-23",
+            "2026-06-24",
+            "2026-06-25",
+            "2026-06-26",
+            "2026-06-27",
+            "2026-06-28",
+            "2026-06-29",
+            "2026-06-30",
+            "2026-07-01",
+            "2026-07-02",
+            "2026-07-03",
+            "2026-07-04",
+            "2026-07-05",
+            "2026-07-06",
+            "2026-07-07",
+            "2026-07-08",
+            "2026-07-09",
+            "2026-07-10",
+            "2026-07-11",
+            "2026-07-12",
+            "2026-07-13",
+            "2026-07-14",
+            "2026-07-15",
+            "2026-07-16",
+            "2026-07-17",
+            "2026-07-18",
+            "2026-07-19",
+            "2026-07-20",
+            "2026-07-21",
+            "2026-07-22",
+            "2026-07-23",
+            "2026-07-24",
+            "2026-07-25",
+            "2026-07-26",
+            "2026-07-27",
+            "2026-07-28",
+            "2026-07-29",
+            "2026-07-30",
+            "2026-07-31",
+            "2026-08-01",
+            "2026-08-02",
+            "2026-08-03",
+            "2026-08-04",
+            "2026-08-05",
+            "2026-08-06",
+            "2026-08-07",
+            "2026-08-08",
+            "2026-08-09",
+            "2026-08-10",
+            "2026-08-11",
+            "2026-08-12",
+            "2026-08-13",
+            "2026-08-14",
+            "2026-08-15",
+            "2026-08-16",
+            "2026-08-17",
+            "2026-08-18",
+            "2026-08-19",
+            "2026-08-20",
+            "2026-08-21",
+            "2026-08-22",
+            "2026-08-23",
+            "2026-08-24",
+            "2026-08-25",
+            "2026-08-26",
+            "2026-08-27",
+            "2026-08-28",
+            "2026-08-29",
+            "2026-08-30",
+            "2026-08-31",
+            "2026-09-01"
+          ],
+          "xaxis": "x",
+          "y": {
+            "dtype": "f8",
+            "bdata": "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"
+          },
+          "yaxis": "y",
+          "type": "scatter"
+        },
+        {
+          "hovertemplate": "=%{x}<br>Cumulative return=%{y}<extra></extra>",
+          "legendgroup": "btc_benchmark",
+          "line": {
+            "color": "#EF553B",
+            "dash": "solid"
+          },
+          "marker": {
+            "symbol": "circle"
+          },
+          "mode": "lines",
+          "name": "btc_benchmark",
+          "orientation": "v",
+          "showlegend": true,
+          "x": [
+            "2025-06-05",
+            "2025-06-06",
+            "2025-06-07",
+            "2025-06-08",
+            "2025-06-09",
+            "2025-06-10",
+            "2025-06-11",
+            "2025-06-12",
+            "2025-06-13",
+            "2025-06-14",
+            "2025-06-15",
+            "2025-06-16",
+            "2025-06-17",
+            "2025-06-18",
+            "2025-06-19",
+            "2025-06-20",
+            "2025-06-21",
+            "2025-06-22",
+            "2025-06-23",
+            "2025-06-24",
+            "2025-06-25",
+            "2025-06-26",
+            "2025-06-27",
+            "2025-06-28",
+            "2025-06-29",
+            "2025-06-30",
+            "2025-07-01",
+            "2025-07-02",
+            "2025-07-03",
+            "2025-07-04",
+            "2025-07-05",
+            "2025-07-06",
+            "2025-07-07",
+            "2025-07-08",
+            "2025-07-09",
+            "2025-07-10",
+            "2025-07-11",
+            "2025-07-12",
+            "2025-07-13",
+            "2025-07-14",
+            "2025-07-15",
+            "2025-07-16",
+            "2025-07-17",
+            "2025-07-18",
+            "2025-07-19",
+            "2025-07-20",
+            "2025-07-21",
+            "2025-07-22",
+            "2025-07-23",
+            "2025-07-24",
+            "2025-07-25",
+            "2025-07-26",
+            "2025-07-27",
+            "2025-07-28",
+            "2025-07-29",
+            "2025-07-30",
+            "2025-07-31",
+            "2025-08-01",
+            "2025-08-02",
+            "2025-08-03",
+            "2025-08-04",
+            "2025-08-05",
+            "2025-08-06",
+            "2025-08-07",
+            "2025-08-08",
+            "2025-08-09",
+            "2025-08-10",
+            "2025-08-11",
+            "2025-08-12",
+            "2025-08-13",
+            "2025-08-14",
+            "2025-08-15",
+            "2025-08-16",
+            "2025-08-17",
+            "2025-08-18",
+            "2025-08-19",
+            "2025-08-20",
+            "2025-08-21",
+            "2025-08-22",
+            "2025-08-23",
+            "2025-08-24",
+            "2025-08-25",
+            "2025-08-26",
+            "2025-08-27",
+            "2025-08-28",
+            "2025-08-29",
+            "2025-08-30",
+            "2025-08-31",
+            "2025-09-01",
+            "2025-09-02",
+            "2025-09-03",
+            "2025-09-04",
+            "2025-09-05",
+            "2025-09-06",
+            "2025-09-07",
+            "2025-09-08",
+            "2025-09-09",
+            "2025-09-10",
+            "2025-09-11",
+            "2025-09-12",
+            "2025-09-13",
+            "2025-09-14",
+            "2025-09-15",
+            "2025-09-16",
+            "2025-09-17",
+            "2025-09-18",
+            "2025-09-19",
+            "2025-09-20",
+            "2025-09-21",
+            "2025-09-22",
+            "2025-09-23",
+            "2025-09-24",
+            "2025-09-25",
+            "2025-09-26",
+            "2025-09-27",
+            "2025-09-28",
+            "2025-09-29",
+            "2025-09-30",
+            "2025-10-01",
+            "2025-10-02",
+            "2025-10-03",
+            "2025-10-04",
+            "2025-10-05",
+            "2025-10-06",
+            "2025-10-07",
+            "2025-10-08",
+            "2025-10-09",
+            "2025-10-10",
+            "2025-10-11",
+            "2025-10-12",
+            "2025-10-13",
+            "2025-10-14",
+            "2025-10-15",
+            "2025-10-16",
+            "2025-10-17",
+            "2025-10-18",
+            "2025-10-19",
+            "2025-10-20",
+            "2025-10-21",
+            "2025-10-22",
+            "2025-10-23",
+            "2025-10-24",
+            "2025-10-25",
+            "2025-10-26",
+            "2025-10-27",
+            "2025-10-28",
+            "2025-10-29",
+            "2025-10-30",
+            "2025-10-31",
+            "2025-11-01",
+            "2025-11-02",
+            "2025-11-03",
+            "2025-11-04",
+            "2025-11-05",
+            "2025-11-06",
+            "2025-11-07",
+            "2025-11-08",
+            "2025-11-09",
+            "2025-11-10",
+            "2025-11-11",
+            "2025-11-12",
+            "2025-11-13",
+            "2025-11-14",
+            "2025-11-15",
+            "2025-11-16",
+            "2025-11-17",
+            "2025-11-18",
+            "2025-11-19",
+            "2025-11-20",
+            "2025-11-21",
+            "2025-11-22",
+            "2025-11-23",
+            "2025-11-24",
+            "2025-11-25",
+            "2025-11-26",
+            "2025-11-27",
+            "2025-11-28",
+            "2025-11-29",
+            "2025-11-30",
+            "2025-12-01",
+            "2025-12-02",
+            "2025-12-03",
+            "2025-12-04",
+            "2025-12-05",
+            "2025-12-06",
+            "2025-12-07",
+            "2025-12-08",
+            "2025-12-09",
+            "2025-12-10",
+            "2025-12-11",
+            "2025-12-12",
+            "2025-12-13",
+            "2025-12-14",
+            "2025-12-15",
+            "2025-12-16",
+            "2025-12-17",
+            "2025-12-18",
+            "2025-12-19",
+            "2025-12-20",
+            "2025-12-21",
+            "2025-12-22",
+            "2025-12-23",
+            "2025-12-24",
+            "2025-12-25",
+            "2025-12-26",
+            "2025-12-27",
+            "2025-12-28",
+            "2025-12-29",
+            "2025-12-30",
+            "2025-12-31",
+            "2026-01-01",
+            "2026-01-02",
+            "2026-01-03",
+            "2026-01-04",
+            "2026-01-05",
+            "2026-01-06",
+            "2026-01-07",
+            "2026-01-08",
+            "2026-01-09",
+            "2026-01-10",
+            "2026-01-11",
+            "2026-01-12",
+            "2026-01-13",
+            "2026-01-14",
+            "2026-01-15",
+            "2026-01-16",
+            "2026-01-17",
+            "2026-01-18",
+            "2026-01-19",
+            "2026-01-20",
+            "2026-01-21",
+            "2026-01-22",
+            "2026-01-23",
+            "2026-01-24",
+            "2026-01-25",
+            "2026-01-26",
+            "2026-01-27",
+            "2026-01-28",
+            "2026-01-29",
+            "2026-01-30",
+            "2026-01-31",
+            "2026-02-01",
+            "2026-02-02",
+            "2026-02-03",
+            "2026-02-04",
+            "2026-02-05",
+            "2026-02-06",
+            "2026-02-07",
+            "2026-02-08",
+            "2026-02-09",
+            "2026-02-10",
+            "2026-02-11",
+            "2026-02-12",
+            "2026-02-13",
+            "2026-02-14",
+            "2026-02-15",
+            "2026-02-16",
+            "2026-02-17",
+            "2026-02-18",
+            "2026-02-19",
+            "2026-02-20",
+            "2026-02-21",
+            "2026-02-22",
+            "2026-02-23",
+            "2026-02-24",
+            "2026-02-25",
+            "2026-02-26",
+            "2026-02-27",
+            "2026-02-28",
+            "2026-03-01",
+            "2026-03-02",
+            "2026-03-03",
+            "2026-03-04",
+            "2026-03-05",
+            "2026-03-06",
+            "2026-03-07",
+            "2026-03-08",
+            "2026-03-09",
+            "2026-03-10",
+            "2026-03-11",
+            "2026-03-12",
+            "2026-03-13",
+            "2026-03-14",
+            "2026-03-15",
+            "2026-03-16",
+            "2026-03-17",
+            "2026-03-18",
+            "2026-03-19",
+            "2026-03-20",
+            "2026-03-21",
+            "2026-03-22",
+            "2026-03-23",
+            "2026-03-24",
+            "2026-03-25",
+            "2026-03-26",
+            "2026-03-27",
+            "2026-03-28",
+            "2026-03-29",
+            "2026-03-30",
+            "2026-03-31",
+            "2026-04-01",
+            "2026-04-02",
+            "2026-04-03",
+            "2026-04-04",
+            "2026-04-05",
+            "2026-04-06",
+            "2026-04-07",
+            "2026-04-08",
+            "2026-04-09",
+            "2026-04-10",
+            "2026-04-11",
+            "2026-04-12",
+            "2026-04-13",
+            "2026-04-14",
+            "2026-04-15",
+            "2026-04-16",
+            "2026-04-17",
+            "2026-04-18",
+            "2026-04-19",
+            "2026-04-20",
+            "2026-04-21",
+            "2026-04-22",
+            "2026-04-23",
+            "2026-04-24",
+            "2026-04-25",
+            "2026-04-26",
+            "2026-04-27",
+            "2026-04-28",
+            "2026-04-29",
+            "2026-04-30",
+            "2026-05-01",
+            "2026-05-02",
+            "2026-05-03",
+            "2026-05-04",
+            "2026-05-05",
+            "2026-05-06",
+            "2026-05-07",
+            "2026-05-08",
+            "2026-05-09",
+            "2026-05-10",
+            "2026-05-11",
+            "2026-05-12",
+            "2026-05-13",
+            "2026-05-14",
+            "2026-05-15",
+            "2026-05-16",
+            "2026-05-17",
+            "2026-05-18",
+            "2026-05-19",
+            "2026-05-20",
+            "2026-05-21",
+            "2026-05-22",
+            "2026-05-23",
+            "2026-05-24",
+            "2026-05-25",
+            "2026-05-26",
+            "2026-05-27",
+            "2026-05-28",
+            "2026-05-29",
+            "2026-05-30",
+            "2026-05-31",
+            "2026-06-01",
+            "2026-06-02",
+            "2026-06-03",
+            "2026-06-04",
+            "2026-06-05",
+            "2026-06-06",
+            "2026-06-07",
+            "2026-06-08",
+            "2026-06-09",
+            "2026-06-10",
+            "2026-06-11",
+            "2026-06-12",
+            "2026-06-13",
+            "2026-06-14",
+            "2026-06-15",
+            "2026-06-16",
+            "2026-06-17",
+            "2026-06-18",
+            "2026-06-19",
+            "2026-06-20",
+            "2026-06-21",
+            "2026-06-22",
+            "2026-06-23",
+            "2026-06-24",
+            "2026-06-25",
+            "2026-06-26",
+            "2026-06-27",
+            "2026-06-28",
+            "2026-06-29",
+            "2026-06-30",
+            "2026-07-01",
+            "2026-07-02",
+            "2026-07-03",
+            "2026-07-04",
+            "2026-07-05",
+            "2026-07-06",
+            "2026-07-07",
+            "2026-07-08",
+            "2026-07-09",
+            "2026-07-10",
+            "2026-07-11",
+            "2026-07-12",
+            "2026-07-13",
+            "2026-07-14",
+            "2026-07-15",
+            "2026-07-16",
+            "2026-07-17",
+            "2026-07-18",
+            "2026-07-19",
+            "2026-07-20",
+            "2026-07-21",
+            "2026-07-22",
+            "2026-07-23",
+            "2026-07-24",
+            "2026-07-25",
+            "2026-07-26",
+            "2026-07-27",
+            "2026-07-28",
+            "2026-07-29",
+            "2026-07-30",
+            "2026-07-31",
+            "2026-08-01",
+            "2026-08-02",
+            "2026-08-03",
+            "2026-08-04",
+            "2026-08-05",
+            "2026-08-06",
+            "2026-08-07",
+            "2026-08-08",
+            "2026-08-09",
+            "2026-08-10",
+            "2026-08-11",
+            "2026-08-12",
+            "2026-08-13",
+            "2026-08-14",
+            "2026-08-15",
+            "2026-08-16",
+            "2026-08-17",
+            "2026-08-18",
+            "2026-08-19",
+            "2026-08-20",
+            "2026-08-21",
+            "2026-08-22",
+            "2026-08-23",
+            "2026-08-24",
+            "2026-08-25",
+            "2026-08-26",
+            "2026-08-27",
+            "2026-08-28",
+            "2026-08-29",
+            "2026-08-30",
+            "2026-08-31",
+            "2026-09-01"
+          ],
+          "xaxis": "x",
+          "y": {
+            "dtype": "f8",
+            "bdata": "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"
+          },
+          "yaxis": "y",
+          "type": "scatter"
+        }
+      ],
+      "layout": {
+        "template": {
+          "data": {
+            "barpolar": [
+              {
+                "marker": {
+                  "line": {
+                    "color": "white",
+                    "width": 0.5
+                  },
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "barpolar"
+              }
+            ],
+            "bar": [
+              {
+                "error_x": {
+                  "color": "#2a3f5f"
+                },
+                "error_y": {
+                  "color": "#2a3f5f"
+                },
+                "marker": {
+                  "line": {
+                    "color": "white",
+                    "width": 0.5
+                  },
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "bar"
+              }
+            ],
+            "carpet": [
+              {
+                "aaxis": {
+                  "endlinecolor": "#2a3f5f",
+                  "gridcolor": "#C8D4E3",
+                  "linecolor": "#C8D4E3",
+                  "minorgridcolor": "#C8D4E3",
+                  "startlinecolor": "#2a3f5f"
+                },
+                "baxis": {
+                  "endlinecolor": "#2a3f5f",
+                  "gridcolor": "#C8D4E3",
+                  "linecolor": "#C8D4E3",
+                  "minorgridcolor": "#C8D4E3",
+                  "startlinecolor": "#2a3f5f"
+                },
+                "type": "carpet"
+              }
+            ],
+            "choropleth": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "type": "choropleth"
+              }
+            ],
+            "contourcarpet": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "type": "contourcarpet"
+              }
+            ],
+            "contour": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "contour"
+              }
+            ],
+            "heatmap": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "heatmap"
+              }
+            ],
+            "histogram2dcontour": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "histogram2dcontour"
+              }
+            ],
+            "histogram2d": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "histogram2d"
+              }
+            ],
+            "histogram": [
+              {
+                "marker": {
+                  "pattern": {
+                    "fillmode": "overlay",
+                    "size": 10,
+                    "solidity": 0.2
+                  }
+                },
+                "type": "histogram"
+              }
+            ],
+            "mesh3d": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "type": "mesh3d"
+              }
+            ],
+            "parcoords": [
+              {
+                "line": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "parcoords"
+              }
+            ],
+            "pie": [
+              {
+                "automargin": true,
+                "type": "pie"
+              }
+            ],
+            "scatter3d": [
+              {
+                "line": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scatter3d"
+              }
+            ],
+            "scattercarpet": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scattercarpet"
+              }
+            ],
+            "scattergeo": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scattergeo"
+              }
+            ],
+            "scattergl": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scattergl"
+              }
+            ],
+            "scattermap": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scattermap"
+              }
+            ],
+            "scatterpolargl": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scatterpolargl"
+              }
+            ],
+            "scatterpolar": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scatterpolar"
+              }
+            ],
+            "scatter": [
+              {
+                "fillpattern": {
+                  "fillmode": "overlay",
+                  "size": 10,
+                  "solidity": 0.2
+                },
+                "type": "scatter"
+              }
+            ],
+            "scatterternary": [
+              {
+                "marker": {
+                  "colorbar": {
+                    "outlinewidth": 0,
+                    "ticks": ""
+                  }
+                },
+                "type": "scatterternary"
+              }
+            ],
+            "surface": [
+              {
+                "colorbar": {
+                  "outlinewidth": 0,
+                  "ticks": ""
+                },
+                "colorscale": [
+                  [
+                    0.0,
+                    "#0d0887"
+                  ],
+                  [
+                    0.1111111111111111,
+                    "#46039f"
+                  ],
+                  [
+                    0.2222222222222222,
+                    "#7201a8"
+                  ],
+                  [
+                    0.3333333333333333,
+                    "#9c179e"
+                  ],
+                  [
+                    0.4444444444444444,
+                    "#bd3786"
+                  ],
+                  [
+                    0.5555555555555556,
+                    "#d8576b"
+                  ],
+                  [
+                    0.6666666666666666,
+                    "#ed7953"
+                  ],
+                  [
+                    0.7777777777777778,
+                    "#fb9f3a"
+                  ],
+                  [
+                    0.8888888888888888,
+                    "#fdca26"
+                  ],
+                  [
+                    1.0,
+                    "#f0f921"
+                  ]
+                ],
+                "type": "surface"
+              }
+            ],
+            "table": [
+              {
+                "cells": {
+                  "fill": {
+                    "color": "#EBF0F8"
+                  },
+                  "line": {
+                    "color": "white"
+                  }
+                },
+                "header": {
+                  "fill": {
+                    "color": "#C8D4E3"
+                  },
+                  "line": {
+                    "color": "white"
+                  }
+                },
+                "type": "table"
+              }
+            ]
+          },
+          "layout": {
+            "annotationdefaults": {
+              "arrowcolor": "#2a3f5f",
+              "arrowhead": 0,
+              "arrowwidth": 1
+            },
+            "autotypenumbers": "strict",
+            "coloraxis": {
+              "colorbar": {
+                "outlinewidth": 0,
+                "ticks": ""
+              }
+            },
+            "colorscale": {
+              "diverging": [
+                [
+                  0,
+                  "#8e0152"
+                ],
+                [
+                  0.1,
+                  "#c51b7d"
+                ],
+                [
+                  0.2,
+                  "#de77ae"
+                ],
+                [
+                  0.3,
+                  "#f1b6da"
+                ],
+                [
+                  0.4,
+                  "#fde0ef"
+                ],
+                [
+                  0.5,
+                  "#f7f7f7"
+                ],
+                [
+                  0.6,
+                  "#e6f5d0"
+                ],
+                [
+                  0.7,
+                  "#b8e186"
+                ],
+                [
+                  0.8,
+                  "#7fbc41"
+                ],
+                [
+                  0.9,
+                  "#4d9221"
+                ],
+                [
+                  1,
+                  "#276419"
+                ]
+              ],
+              "sequential": [
+                [
+                  0.0,
+                  "#0d0887"
+                ],
+                [
+                  0.1111111111111111,
+                  "#46039f"
+                ],
+                [
+                  0.2222222222222222,
+                  "#7201a8"
+                ],
+                [
+                  0.3333333333333333,
+                  "#9c179e"
+                ],
+                [
+                  0.4444444444444444,
+                  "#bd3786"
+                ],
+                [
+                  0.5555555555555556,
+                  "#d8576b"
+                ],
+                [
+                  0.6666666666666666,
+                  "#ed7953"
+                ],
+                [
+                  0.7777777777777778,
+                  "#fb9f3a"
+                ],
+                [
+                  0.8888888888888888,
+                  "#fdca26"
+                ],
+                [
+                  1.0,
+                  "#f0f921"
+                ]
+              ],
+              "sequentialminus": [
+                [
+                  0.0,
+                  "#0d0887"
+                ],
+                [
+                  0.1111111111111111,
+                  "#46039f"
+                ],
+                [
+                  0.2222222222222222,
+                  "#7201a8"
+                ],
+                [
+                  0.3333333333333333,
+                  "#9c179e"
+                ],
+                [
+                  0.4444444444444444,
+                  "#bd3786"
+                ],
+                [
+                  0.5555555555555556,
+                  "#d8576b"
+                ],
+                [
+                  0.6666666666666666,
+                  "#ed7953"
+                ],
+                [
+                  0.7777777777777778,
+                  "#fb9f3a"
+                ],
+                [
+                  0.8888888888888888,
+                  "#fdca26"
+                ],
+                [
+                  1.0,
+                  "#f0f921"
+                ]
+              ]
+            },
+            "colorway": [
+              "#636efa",
+              "#EF553B",
+              "#00cc96",
+              "#ab63fa",
+              "#FFA15A",
+              "#19d3f3",
+              "#FF6692",
+              "#B6E880",
+              "#FF97FF",
+              "#FECB52"
+            ],
+            "font": {
+              "color": "#2a3f5f"
+            },
+            "geo": {
+              "bgcolor": "white",
+              "lakecolor": "white",
+              "landcolor": "white",
+              "showlakes": true,
+              "showland": true,
+              "subunitcolor": "#C8D4E3"
+            },
+            "hoverlabel": {
+              "align": "left"
+            },
+            "hovermode": "closest",
+            "paper_bgcolor": "white",
+            "plot_bgcolor": "white",
+            "polar": {
+              "angularaxis": {
+                "gridcolor": "#EBF0F8",
+                "linecolor": "#EBF0F8",
+                "ticks": ""
+              },
+              "bgcolor": "white",
+              "radialaxis": {
+                "gridcolor": "#EBF0F8",
+                "linecolor": "#EBF0F8",
+                "ticks": ""
+              }
+            },
+            "scene": {
+              "xaxis": {
+                "backgroundcolor": "white",
+                "gridcolor": "#DFE8F3",
+                "gridwidth": 2,
+                "linecolor": "#EBF0F8",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#EBF0F8"
+              },
+              "yaxis": {
+                "backgroundcolor": "white",
+                "gridcolor": "#DFE8F3",
+                "gridwidth": 2,
+                "linecolor": "#EBF0F8",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#EBF0F8"
+              },
+              "zaxis": {
+                "backgroundcolor": "white",
+                "gridcolor": "#DFE8F3",
+                "gridwidth": 2,
+                "linecolor": "#EBF0F8",
+                "showbackground": true,
+                "ticks": "",
+                "zerolinecolor": "#EBF0F8"
+              }
+            },
+            "shapedefaults": {
+              "line": {
+                "color": "#2a3f5f"
+              }
+            },
+            "ternary": {
+              "aaxis": {
+                "gridcolor": "#DFE8F3",
+                "linecolor": "#A2B1C6",
+                "ticks": ""
+              },
+              "baxis": {
+                "gridcolor": "#DFE8F3",
+                "linecolor": "#A2B1C6",
+                "ticks": ""
+              },
+              "bgcolor": "white",
+              "caxis": {
+                "gridcolor": "#DFE8F3",
+                "linecolor": "#A2B1C6",
+                "ticks": ""
+              }
+            },
+            "title": {
+              "x": 0.05
+            },
+            "xaxis": {
+              "automargin": true,
+              "gridcolor": "#EBF0F8",
+              "linecolor": "#EBF0F8",
+              "ticks": "",
+              "title": {
+                "standoff": 15
+              },
+              "zerolinecolor": "#EBF0F8",
+              "zerolinewidth": 2
+            },
+            "yaxis": {
+              "automargin": true,
+              "gridcolor": "#EBF0F8",
+              "linecolor": "#EBF0F8",
+              "ticks": "",
+              "title": {
+                "standoff": 15
+              },
+              "zerolinecolor": "#EBF0F8",
+              "zerolinewidth": 2
+            }
+          }
+        },
+        "xaxis": {
+          "anchor": "y",
+          "domain": [
+            0.0,
+            1.0
+          ],
+          "title": {
+            "text": ""
+          }
+        },
+        "yaxis": {
+          "anchor": "x",
+          "domain": [
+            0.0,
+            1.0
+          ],
+          "title": {
+            "text": "Cumulative return"
+          },
+          "tickformat": ".0%"
+        },
+        "legend": {
+          "title": {
+            "text": ""
+          },
+          "tracegroupgap": 0
+        },
+        "title": {
+          "text": "Equity curve"
+        },
+        "paper_bgcolor": "rgba(0,0,0,0)",
+        "plot_bgcolor": "rgba(0,0,0,0)"
+      }
+    }
+  ],
+  "datasets": {},
+  "schema": 1,
+  "data": "real",
+  "notebook_sha256": "000e6d4c99a49d97951ecac53f33fb8e880d4f4dc6e8e588f4ebc37a84161648",
+  "captured_at": "2026-09-16T13:51:17+00:00",
+  "label": "10L / 10S \u00b7 Min var \u00b7 1\u00d7",
+  "parameters": [
+    "--n_long=10"
+  ],
+  "api_url": "http://127.0.0.1:8797/api"
+}

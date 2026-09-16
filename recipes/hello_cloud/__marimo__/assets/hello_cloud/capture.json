@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "data": "real",
+  "source_sha256": "b36c3f2e5de033b5a189e060b4acd414bd2dd1f48d5b20dcd3a976817b9ce143",
+  "image_sha256": "4d356ecc77009f51a3087b8f62cfa8b5c4164ea4109bd01ceb0dfa9e7f8e19ff",
+  "captured_at": "2026-09-16T13:47:05+00:00",
+  "data_through": null,
+  "label": "Actual hello.json artifact"
+}
