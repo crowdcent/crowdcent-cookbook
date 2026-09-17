@@ -250,8 +250,12 @@ def worker(slug, work, cache):
                 f"{slug}: notebook produced no figure named {spec['figure']}."
             )
         captured["figures"] = [json.loads(figure.to_json())]
-    for path in sorted(work.glob("*.parquet")):
-        frame = pl.scan_parquet(path)
+    for path in sorted([*work.glob("*.parquet"), *work.glob("*.csv")]):
+        frame = (
+            pl.scan_parquet(path)
+            if path.suffix == ".parquet"
+            else pl.scan_csv(path, try_parse_dates=True)
+        )
         through = (
             frame.select(pl.col("date").max()).collect().item()
             if "date" in frame.collect_schema()

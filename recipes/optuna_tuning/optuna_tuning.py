@@ -1,6 +1,6 @@
 # /// script
 # dependencies = [
-#     "crowdcent-challenge>=0.1.21",
+#     "crowdcent-challenge>=0.2.6",
 #     "joblib",
 #     "marimo",
 #     "numpy",
@@ -145,7 +145,9 @@ def _(DEFAULTS, mo, os, search_form):
 def _(cc, dt, pl, search):
     client = cc.ChallengeClient("hyperliquid-ranking")
     client.download_training_dataset("latest", "training_data.parquet")
-    data = pl.read_parquet("training_data.parquet").drop_nulls(search["target"])
+    data = pl.read_parquet("training_data.parquet", use_pyarrow=True).drop_nulls(
+        search["target"]
+    )
     features = [c for c in data.columns if c.startswith("feature_")]
 
     # Validate on the last fifth of dates, a month past training, so no target's window reaches back.
