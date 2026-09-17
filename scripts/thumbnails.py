@@ -215,7 +215,10 @@ def read_only_client(cache):
         return request(self, method, endpoint, *args, **kwargs)
 
     def cached(self, endpoint, dest_path, description):
-        path = cache / hashlib.sha256((self.base_url + endpoint).encode()).hexdigest()
+        # The destination's extension picks the format, so the cache keeps it.
+        suffix = Path(dest_path).suffix
+        digest = hashlib.sha256((self.base_url + endpoint + suffix).encode()).hexdigest()
+        path = cache / f"{digest}{suffix}"
         if not path.exists():
             download(self, endpoint, str(path), description)
         shutil.copyfile(path, dest_path)
