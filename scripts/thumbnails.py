@@ -215,7 +215,10 @@ def read_only_client(cache):
         return request(self, method, endpoint, *args, **kwargs)
 
     def cached(self, endpoint, dest_path, description):
-        path = cache / hashlib.sha256((self.base_url + endpoint).encode()).hexdigest()
+        # The destination's extension picks the format, so the cache keeps it.
+        suffix = Path(dest_path).suffix
+        digest = hashlib.sha256((self.base_url + endpoint + suffix).encode()).hexdigest()
+        path = cache / f"{digest}{suffix}"
         if not path.exists():
             download(self, endpoint, str(path), description)
         shutil.copyfile(path, dest_path)
@@ -250,8 +253,12 @@ def worker(slug, work, cache):
                 f"{slug}: notebook produced no figure named {spec['figure']}."
             )
         captured["figures"] = [json.loads(figure.to_json())]
-    for path in sorted(work.glob("*.parquet")):
-        frame = pl.scan_parquet(path)
+    for path in sorted([*work.glob("*.parquet"), *work.glob("*.csv")]):
+        frame = (
+            pl.scan_parquet(path)
+            if path.suffix == ".parquet"
+            else pl.scan_csv(path, try_parse_dates=True)
+        )
         through = (
             frame.select(pl.col("date").max()).collect().item()
             if "date" in frame.collect_schema()

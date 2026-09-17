@@ -8,7 +8,7 @@
           "marker": {
             "color": {
               "dtype": "i1",
-              "bdata": "AwYIAgYIBQUEBAcDAwIDAwQDBAIDAgIC"
+              "bdata": "BwcIBQYGBgIDAwQDAwIEAgMDAwMEAwID"
             },
             "coloraxis": "coloraxis",
             "symbol": "circle"
@@ -19,12 +19,12 @@
           "showlegend": false,
           "x": {
             "dtype": "f8",
-            "bdata": "RPNnK1sckz8r8SGUFA29P/5N/R3ekrM/yA1T6esTpz/oHVb/sBmkPzWlqq3xo9I/NH54icGapj9Y6F+LRsuZP1Ju+QI60cY/vWKuBapLlz/kT5Q1JM2HP2tpDrQ6G6g/fjcjGJJHrj9PNzMGDh6KP5r2nDoWPZg/eIQFeUGAyT+4vDgaJs+fP9kd7z2RcIY/jtlHFwUfjz/sJeWYLr6qP/lsz90iApo/5/Jwkbm0hz+y1nYNL9edPzgk7aw9AbQ/"
+            "bdata": "rTJ38ufsuz/5ZMtukxbRP/OaZogcpLM/OiYA82kJsD937Vw3JZbKP8ZYG33RA6w/OrjJobH2xj+7RV86m8G9P1e2WB/5paQ/TBbsxTxalD/06ijVZvqVP4uEnmztXZs/dtXgukqojz+ut5D/QsWiPz3i2fG1EI4/2HCYA0pAmz9ohGRMzZGHP/vDK1dfnKY/6UWEnrcIjz8dXqNbByahP+R7oDdEn4Y/oVKI0HYwhT+h3j7zl4aZPxE3UqP4T5A/"
           },
           "xaxis": "x",
           "y": {
             "dtype": "f8",
-            "bdata": "zP6Niar1wD/7UV9Pqqi1PzDgFICpQ7M/jIRSoWEtwj8V3BEgnpG3P+kYxVilCaw/sGzo1P6/vD/HGHGME2nAP0mZm3M6Tbg/Mb5TL9eewT8Q7ZCcjdHAP1+gGpUEqsE/uHRq91vhwD+J77rwSprBP8ovw3aj4sE/sG0gLkSQvj+KF8X30DHBP2ZjNi9TzME//+CAcSDAwT+FoR2l43vBPwk6+0U678E/5lf1GZHJwT/I0TLhQsjBP3sFGHlqnME/"
+            "bdata": "9q7ZBCmGrz8l1CmPzTmoP4ZElyEtWbI/n/aPenf2uz/kgsjNFJGyP8vUXLf/yLs/rW9/x5cVpz+lMih4vpi7PxDxL3PWS70/StA4vQWCvz89VmtCrZq/P8M1xvnHF8A/kltPklzRvz+CX3/awPy/PxIYbXjMnb4/uZ0SoqF8wD93dBn/63LAP5p5NTipeL4/CbMSRjhxwD9/0aU1RD+/P4jWRDs1HMA/3eqQt0JIwD9wwtMQM1PAP0+n/jp9ksA/"
           },
           "yaxis": "y",
           "type": "scatter"
@@ -874,18 +874,18 @@
   ],
   "datasets": {
     "training_data.parquet": {
-      "sha256": "27d42321c359f6d65a6f692fa2a419abba23ed4993bae4b2af57568ff4504c04",
-      "through": "2026-06-20"
+      "sha256": "a750de574c4816ed0a8b484f797f6d79c52bf476186739b19cdf5e3b770b74df",
+      "through": "2026-08-16"
     }
   },
   "schema": 1,
   "data": "real",
-  "notebook_sha256": "99c81acb722820fa0027915d903187e1d6a51069fef46ce2874340b4a911ea25",
-  "captured_at": "2026-09-16T13:51:08+00:00",
+  "notebook_sha256": "0c917057d1497d85223dd808f7594faf0b8e124d6a4626df244f3c307a78c26c",
+  "captured_at": "2026-09-17T01:58:17+00:00",
   "label": "24 trials \u00b7 XGBoost",
   "parameters": [
     "--trials=24",
     "--depth_max=8"
   ],
-  "api_url": "http://127.0.0.1:8797/api"
+  "api_url": "https://crowdcent.com/api"
 }

@@ -54,7 +54,10 @@ def install():
                 ]
             )
         elif endpoint.endswith("/submissions/") and method == "POST":
-            frame = pl.read_parquet(kwargs["files"]["prediction_file"][1])
+            name, handle = kwargs["files"]["prediction_file"][:2]
+            frame = (
+                pl.read_csv(handle) if name.endswith(".csv") else pl.read_parquet(handle)
+            )
             assert frame.columns == ["id", "pred_10d", "pred_30d"]
             assert frame.height == 8
             assert frame.select(
@@ -113,7 +116,10 @@ def install():
             frame = frame.with_columns(
                 pl.Series("target_10d", target), pl.Series("target_30d", target)
             )
-        frame.write_parquet(dest_path)
+        if str(dest_path).endswith(".csv"):
+            frame.write_csv(dest_path)
+        else:
+            frame.write_parquet(dest_path)
 
     cc.ChallengeClient._request = request
     cc.ChallengeClient._download_file = download

@@ -18,12 +18,45 @@ environment the notebook asks for and nothing else.
 
 ## Recipes
 
-- `hello_cloud` tells a Cloud run from a tab and leaves a file behind for the run report.
-- `hyperliquid_ranking` trains a model on CrowdCent's training data and submits predictions.
-- `track_your_performance` charts every scored submission you have made, by slot.
-- `simulate_the_meta_model` backtests the meta-model as a long/short book from a few sliders.
-- `optuna_tuning` tunes XGBoost with Optuna, from a form in the browser or with defaults and optional run parameters on Cloud.
-- `numerai_dashboard` reads payouts, stake, and per-model scores for any Numerai account.
+Every card is a real result from the notebook behind it, rendered from the
+committed snapshot with its source and date on the image.
+
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="recipes/hyperliquid_ranking"><img src="recipes/hyperliquid_ranking/__marimo__/assets/hyperliquid_ranking/opengraph.png" alt="Hyperliquid ranking" width="100%"></a><br>
+      <strong><a href="recipes/hyperliquid_ranking">Hyperliquid ranking</a></strong><br>
+      <sub>Trains a model on CrowdCent's training data and submits 10d and 30d predictions.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="recipes/track_your_performance"><img src="recipes/track_your_performance/__marimo__/assets/track_your_performance/opengraph.png" alt="Track your performance" width="100%"></a><br>
+      <strong><a href="recipes/track_your_performance">Track your performance</a></strong><br>
+      <sub>Charts every scored submission you have made, by slot.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="recipes/simulate_the_meta_model"><img src="recipes/simulate_the_meta_model/__marimo__/assets/simulate_the_meta_model/opengraph.png" alt="Simulate the meta-model" width="100%"></a><br>
+      <strong><a href="recipes/simulate_the_meta_model">Simulate the meta-model</a></strong><br>
+      <sub>Backtests the meta-model as a long/short book from a few sliders.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <a href="recipes/optuna_tuning"><img src="recipes/optuna_tuning/__marimo__/assets/optuna_tuning/opengraph.png" alt="Optuna tuning" width="100%"></a><br>
+      <strong><a href="recipes/optuna_tuning">Optuna tuning</a></strong><br>
+      <sub>Tunes XGBoost with Optuna, from a form in the browser or with defaults on Cloud.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="recipes/numerai_dashboard"><img src="recipes/numerai_dashboard/__marimo__/assets/numerai_dashboard/opengraph.png" alt="Numerai dashboard" width="100%"></a><br>
+      <strong><a href="recipes/numerai_dashboard">Numerai dashboard</a></strong><br>
+      <sub>Reads payouts, stake, and per-model scores for any Numerai account.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <a href="recipes/hello_cloud"><img src="recipes/hello_cloud/__marimo__/assets/hello_cloud/opengraph.png" alt="Hello Cloud" width="100%"></a><br>
+      <strong><a href="recipes/hello_cloud">Hello Cloud</a></strong><br>
+      <sub>Tells a Cloud run from a tab and leaves a file behind for the run report.</sub>
+    </td>
+  </tr>
+</table>
 
 Cloud runs execute automatically with defaults saved in the notebooks.
 The simulator, Optuna search, and Numerai dashboard also accept run

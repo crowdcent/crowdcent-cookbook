@@ -1,6 +1,6 @@
 # /// script
 # dependencies = [
-#     "crowdcent-challenge>=0.1.21",
+#     "crowdcent-challenge>=0.2.6",
 #     "marimo",
 #     "polars",
 #     "pyarrow",
@@ -67,7 +67,7 @@ def _(cc):
 @app.cell
 def _(client, pl):
     client.download_training_dataset("latest", "training_data.parquet")
-    training_data = pl.read_parquet("training_data.parquet")
+    training_data = pl.read_parquet("training_data.parquet", use_pyarrow=True)
     training_data.head()
     return (training_data,)
 
@@ -89,8 +89,8 @@ def _(XGBRegressor, pl, training_data):
 
 @app.cell
 def _(client, pl):
-    client.download_inference_data("latest", "inference_data.parquet")
-    inference_data = pl.read_parquet("inference_data.parquet")
+    client.download_inference_data("latest", "inference_data.csv")
+    inference_data = pl.read_csv("inference_data.csv")
     inference_data.head()
     return (inference_data,)
 
