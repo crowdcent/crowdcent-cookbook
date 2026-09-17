@@ -2,6 +2,7 @@
 
 import json
 import time
+import urllib.parse
 import warnings
 
 import polars as pl
@@ -29,11 +30,12 @@ def _post(document):
 
     params = mo.query_params() if mo.running_in_notebook() else {}
     if params.get("site"):
+        form = {"body": json.dumps(document), "grant": params.get("g") or ""}
         answer = urllib3.request(
             "POST",
             f"{params['site']}/cloud/relay/{HOST}/",
-            fields={"body": json.dumps(document), "grant": params.get("g") or ""},
-            encode_multipart=False,
+            body=urllib.parse.urlencode(form),
+            headers={"Content-Type": "application/x-www-form-urlencoded"},
             timeout=60,
         )
     else:
