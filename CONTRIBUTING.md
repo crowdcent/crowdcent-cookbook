@@ -154,6 +154,9 @@ artifact delivery, or the next occurrence of a schedule.
   Describe automatic submissions in the notebook's introduction.
 - Helpers hold the plumbing; the notebook holds the story. If a cell needs a
   comment to explain what it does, move that code into a helper.
+- Name a helper for what it does, never like a package. The browser installs
+  any import it cannot find from PyPI, so `numerai.py` would be looked up
+  there; `numerai_graphql.py` is unmistakably the file beside the notebook.
 - A form with complete defaults can run unattended without parameters:
   `answered = dict(mo.cli_args()) or form.value`, then
   `mo.stop(not answered and not os.environ.get("CROWDCENT_RUN_ID"), ...)`

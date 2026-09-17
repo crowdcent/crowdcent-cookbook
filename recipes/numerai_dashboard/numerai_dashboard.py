@@ -38,9 +38,9 @@ def _():
     import plotly.express as px
     import polars as pl
 
-    import numerai
+    import numerai_graphql
 
-    return mo, numerai, os, pl, px
+    return mo, numerai_graphql, os, pl, px
 
 
 @app.cell
@@ -67,14 +67,14 @@ def _(mo):
 
 
 @app.cell
-def _(account, mo, numerai, os):
+def _(account, mo, numerai_graphql, os):
     account_name = mo.cli_args().get("account") or account.value
     mo.stop(
         not account_name and not os.environ.get("CROWDCENT_RUN_ID"),
         mo.md("Press **Go** to read the account."),
     )
     account_name = str(account_name or "crowdcent").strip()
-    models = numerai.models(account_name)
+    models = numerai_graphql.models(account_name)
     mo.stop(
         models.is_empty(),
         mo.md(f"Numerai has no models under **{account_name}**."),
@@ -82,7 +82,7 @@ def _(account, mo, numerai, os):
     with mo.status.progress_bar(
         total=len(models), title="Reading rounds", remove_on_exit=True
     ) as bar:
-        rounds = numerai.rounds(models, tick=bar.update)
+        rounds = numerai_graphql.rounds(models, tick=bar.update)
     return models, rounds
 
 
@@ -185,9 +185,9 @@ def _(mo, models):
 
 
 @app.cell
-def _(chart, mo, numerai, picker, pl, px):
+def _(chart, mo, numerai_graphql, picker, pl, px):
     model, tournament = picker.value
-    scored = numerai.scores(model, tournament).with_columns(
+    scored = numerai_graphql.scores(model, tournament).with_columns(
         pl.col("value", "percentile").rolling_mean(20).over("metric")
     )
     values = px.line(scored, x="date", y="value", color="metric")
