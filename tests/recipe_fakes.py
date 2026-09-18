@@ -187,17 +187,10 @@ def install():
     urllib3.request = numerai_request
 
     class ProxyManager:
-        """The pool a Cloud run builds for the proxy in its environment."""
+        """A recipe calls the host directly; it never configures a proxy."""
 
-        def __init__(self, proxy_url, proxy_headers=None, **kwargs):
-            record(
-                "proxy",
-                url=proxy_url,
-                authorization=(proxy_headers or {}).get("proxy-authorization", ""),
-            )
-
-        def request(self, method, url, **kwargs):
-            return numerai_request(method, url, **kwargs)
+        def __init__(self, *args, **kwargs):
+            raise AssertionError("A recipe must not configure a proxy; call the host directly.")
 
     urllib3.ProxyManager = ProxyManager
 
