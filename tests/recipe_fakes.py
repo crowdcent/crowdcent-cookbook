@@ -186,6 +186,21 @@ def install():
 
     urllib3.request = numerai_request
 
+    class ProxyManager:
+        """The pool a Cloud run builds for the proxy in its environment."""
+
+        def __init__(self, proxy_url, proxy_headers=None, **kwargs):
+            record(
+                "proxy",
+                url=proxy_url,
+                authorization=(proxy_headers or {}).get("proxy-authorization", ""),
+            )
+
+        def request(self, method, url, **kwargs):
+            return numerai_request(method, url, **kwargs)
+
+    urllib3.ProxyManager = ProxyManager
+
     # A missed mock must fail immediately, never touch a real account.
     def no_network(*args, **kwargs):
         raise AssertionError("Unexpected network request in recipe test")

@@ -1,5 +1,6 @@
 """Execute every complete recipe with Cloud's export command and API fixtures."""
 
+import base64
 import json
 import os
 from pathlib import Path
@@ -11,6 +12,7 @@ import tempfile
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+_PROXY_VARIABLES = {"http_proxy", "https_proxy", "all_proxy", "no_proxy"}
 
 
 class RecipeTests(unittest.TestCase):
@@ -33,7 +35,16 @@ class RecipeTests(unittest.TestCase):
                 self.assertTrue(data.startswith(b"\x89PNG\r\n\x1a\n"))
                 self.assertEqual(struct.unpack(">II", data[16:24]), (1200, 630))
 
-    def export(self, recipe, *, args=(), scenario="normal", cloud=True, success=True):
+    def export(
+        self,
+        recipe,
+        *,
+        args=(),
+        scenario="normal",
+        cloud=True,
+        success=True,
+        proxy=None,
+    ):
         work = Path(self.enterContext(tempfile.TemporaryDirectory()))
         source = ROOT / "recipes" / recipe
         for path in source.glob("*.py"):
@@ -43,11 +54,14 @@ class RecipeTests(unittest.TestCase):
         (hooks / "sitecustomize.py").write_text(
             "from recipe_fakes import install\ninstall()\n"
         )
+        # A laptop's own proxy settings stay out: the test decides which door is open.
         env = {
             key: value
             for key, value in os.environ.items()
-            if not key.startswith("CROWDCENT_")
+            if not key.startswith("CROWDCENT_") and key.lower() not in _PROXY_VARIABLES
         }
+        if proxy:
+            env["https_proxy"] = env["HTTPS_PROXY"] = proxy
         env.update(
             {
                 "PYTHONPATH": os.pathsep.join((str(hooks), str(ROOT / "tests"))),
@@ -160,6 +174,22 @@ class RecipeTests(unittest.TestCase):
                         for call in calls
                     )
                 )
+
+    def test_numerai_posts_through_the_proxy_a_cloud_run_names(self):
+        # Runs and sessions reach their allowed hosts only through CrowdCent's
+        # proxy, named in https_proxy with the grant as its credential. urllib3
+        # ignores that variable on its own, so the recipe must honour it itself.
+        _, calls = self.export(
+            "numerai_dashboard", proxy="http://g-1:t%2B1@proxy.test:8080"
+        )
+        proxies = [call for call in calls if call["kind"] == "proxy"]
+        self.assertEqual(len(proxies), 1, calls)
+        self.assertEqual(proxies[0]["url"], "http://proxy.test:8080")
+        self.assertEqual(
+            proxies[0]["authorization"],
+            "Basic " + base64.b64encode(b"g-1:t+1").decode(),
+        )
+        self.assertTrue(any(call["kind"] == "numerai" for call in calls))
 
     def test_interactive_forms_do_not_call_remote_services(self):
         for recipe in ("simulate_the_meta_model", "numerai_dashboard", "optuna_tuning"):

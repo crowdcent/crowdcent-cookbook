@@ -1,6 +1,7 @@
 """Numerai's public GraphQL API, read into polars frames."""
 
 import json
+import os
 import time
 import urllib.parse
 import warnings
@@ -9,6 +10,7 @@ import polars as pl
 import urllib3
 
 HOST = "api-tournament.numer.ai"
+_PROXIED = None
 TOURNAMENTS = {"classic": 8, "signals": 11, "crypto": 12}
 
 # Each tournament grades its own pair of metrics under its own names.
@@ -19,12 +21,43 @@ METRICS = {
 }
 
 
+def _proxied():
+    """The pool that speaks through the proxy a Cloud run or session names.
+
+    Runs and sessions reach their allowed hosts only through CrowdCent's proxy,
+    given as ``https_proxy``. requests, httpx and urllib read that variable on
+    their own; urllib3 does not, so this helper builds the ProxyManager itself,
+    with the grant credential the URL carries. A laptop without a proxy in its
+    environment reaches Numerai directly.
+    """
+    global _PROXIED
+    if _PROXIED is None:
+        url = os.environ.get("https_proxy") or os.environ.get("HTTPS_PROXY") or ""
+        if not url:
+            _PROXIED = False
+        else:
+            parts = urllib.parse.urlsplit(url)
+            headers = None
+            if parts.username is not None:
+                credential = (
+                    f"{urllib.parse.unquote(parts.username)}:"
+                    f"{urllib.parse.unquote(parts.password or '')}"
+                )
+                headers = urllib3.make_headers(proxy_basic_auth=credential)
+            authority = parts.netloc.rsplit("@", 1)[-1]
+            _PROXIED = urllib3.ProxyManager(
+                f"{parts.scheme or 'http'}://{authority}", proxy_headers=headers
+            )
+    return _PROXIED
+
+
 def _post(document):
-    """One POST to Numerai, through CrowdCent's relay when a tab needs it.
+    """One POST to Numerai, by whichever door this plane opens.
 
     Numerai's API does not answer browsers on other origins, so a notebook
     framed by crowdcent.com posts the same document through the site's relay
-    for this host. A Cloud run or a laptop reaches Numerai directly.
+    for this host. A Cloud run or session posts through the proxy in its
+    environment; a laptop reaches Numerai directly.
     """
     import marimo as mo
 
@@ -39,7 +72,9 @@ def _post(document):
             timeout=60,
         )
     else:
-        answer = urllib3.request(
+        proxied = _proxied()
+        send = proxied.request if proxied else urllib3.request
+        answer = send(
             "POST",
             f"https://{HOST}/",
             json=document,
