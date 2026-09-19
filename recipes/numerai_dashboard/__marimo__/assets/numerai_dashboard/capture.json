@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "data": "real",
-  "source_sha256": "720ccce43356a24047d808cd713500dc056de622c025aaeedfa6d47e3eb31a77",
+  "source_sha256": "e58f18d66d1e50d9875d2dffd779909deb03b657e36b84c5945527986df7903e",
   "image_sha256": "974fd86e170c14eb83fb8ef18fb487463d35679d8d07afc1f6dd5e66b636af6a",
-  "captured_at": "2026-09-18T20:26:13+00:00",
+  "captured_at": "2026-09-18T22:35:16+00:00",
   "data_through": "2026-09-18",
   "label": "Account \u00b7 crowdcent"
 }

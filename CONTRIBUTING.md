@@ -169,17 +169,9 @@ artifact delivery, or the next occurrence of a schedule.
   still `True` and `mo.app_meta().mode` is `"edit"` during export.
 - Live data failures raise. A recipe never renders a sample and calls it a
   report.
-- Outputs go under `CROWDCENT_OUT_DIR` when it is set and stay small.
+- Write outputs under `out/` beside the notebook and keep them small.
 - No keys, tokens, wallet data, or private datasets. Name any external host
   in the pull request; new recipes appear as community recipes with no
   credentials or network access until CrowdCent reviews them.
-- Reach the network through a client that honours the proxy environment. A
-  Cloud run or session cannot open connections itself, not even DNS: it
-  reaches its allowed hosts only through the proxy named in `https_proxy`.
-  `requests`, `httpx`, `urllib.request` and `uv` read that variable on their
-  own. `urllib3` (`urllib3.request`, `PoolManager`), `aiohttp` without
-  `trust_env=True` and `duckdb`'s `httpfs` do not, and fail with a name
-  resolution error; see `numerai_dashboard/numerai_graphql.py` for a urllib3
-  client that builds its `ProxyManager` from the variable. A browser tab has
-  no proxy: it posts through the site's relay, `/cloud/relay/<host>/`, which
-  the same helper shows.
+- Call external APIs over HTTPS exactly as you would on your laptop, with any
+  HTTP client. Nothing about CrowdCent Cloud needs configuring in a recipe.
