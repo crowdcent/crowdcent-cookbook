@@ -174,7 +174,8 @@ def _(mo, result, stats):
 @app.cell
 def _(mo, pl, px, result):
     curve = pl.DataFrame(result["curve"], strict=False).with_columns(
-        pl.col("dates").str.to_date()
+        pl.col("dates").str.to_date(),
+        pl.col("strategy", "btc_benchmark").cast(pl.Float64),
     )
     figure = px.line(
         curve,
