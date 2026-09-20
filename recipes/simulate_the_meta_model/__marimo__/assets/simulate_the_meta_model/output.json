@@ -1760,11 +1760,11 @@
   "datasets": {},
   "schema": 1,
   "data": "real",
-  "notebook_sha256": "000e6d4c99a49d97951ecac53f33fb8e880d4f4dc6e8e588f4ebc37a84161648",
-  "captured_at": "2026-09-16T13:51:17+00:00",
+  "notebook_sha256": "e28fcff8e1f304fba38644c5b18bbd138e1430c877e843ab929c1f487b06eca7",
+  "captured_at": "2026-09-20T20:51:03+00:00",
   "label": "10L / 10S \u00b7 Min var \u00b7 1\u00d7",
   "parameters": [
     "--n_long=10"
   ],
-  "api_url": "http://127.0.0.1:8797/api"
+  "api_url": "http://127.0.0.1:37837/api"
 }
