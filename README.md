@@ -53,12 +53,12 @@ committed snapshot with its source and date on the image.
     <td width="33%" valign="top">
       <a href="recipes/hello_cloud"><img src="recipes/hello_cloud/__marimo__/assets/hello_cloud/opengraph.png" alt="Hello Cloud" width="100%"></a><br>
       <strong><a href="recipes/hello_cloud">Hello Cloud</a></strong><br>
-      <sub>Tells a Cloud run from a tab and leaves a file behind for the run report.</sub>
+      <sub>Tells a Cloud Run from a tab and leaves a file behind for the run report.</sub>
     </td>
   </tr>
 </table>
 
-Cloud runs execute automatically with defaults saved in the notebooks.
+Cloud Runs execute automatically with defaults saved in the notebooks.
 The simulator, Optuna search, and Numerai dashboard also accept run
 parameters; the submission recipe automatically submits to slot 1.
 Interactive forms and submission buttons still wait for your input.

@@ -95,7 +95,7 @@ requirements. It does real downloads, fitting, and backtesting. CrowdCent
 recipes need `CROWDCENT_API_KEY`; account previews also require
 `COOKBOOK_CAPTURE_ACCOUNT` with the key owner's public account name. For a
 local API, set `COOKBOOK_API_URL`. The capture guard rejects client writes,
-including submissions, and does not set the Cloud run ID. This guard is
+including submissions, and does not set the Cloud Run ID. This guard is
 accidental-write protection, not a sandbox for untrusted notebooks.
 
 Only explicitly selected output becomes public. Review `output.json` as
@@ -143,13 +143,13 @@ artifact delivery, or the next occurrence of a schedule.
 
 ## Checklist
 
-- The same cells run in a browser tab, in a Cloud run, and on a laptop. No
+- The same cells run in a browser tab, in a Cloud Run, and on a laptop. No
   `sys.platform` or import-guard branches.
 - In an interactive notebook, a write to CrowdCent waits for a
   `mo.ui.run_button`. A fetch that takes more than a moment waits for a
   `mo.ui.form` submit, so opening a notebook is cheap. Recipes intended for
   unattended execution use `os.environ.get("CROWDCENT_RUN_ID")` to pass
-  these UI gates during Cloud runs, including scheduled runs. For example,
+  these UI gates during Cloud Runs, including scheduled runs. For example,
   `mo.stop(not os.environ.get("CROWDCENT_RUN_ID") and not submit.value)`.
   Describe automatic submissions in the notebook's introduction.
 - Helpers hold the plumbing; the notebook holds the story. If a cell needs a
@@ -164,7 +164,7 @@ artifact delivery, or the next occurrence of a schedule.
   to initialize the form. Run parameters override those defaults; an
   interactive notebook without arguments waits for the form. A run uses
   defaults saved in the code, not unsaved widget values from a session.
-- Use the run ID for Cloud execution context. Cloud runs execute through
+- Use the run ID for Cloud execution context. Cloud Runs execute through
   `marimo export html`; in marimo 0.24.1, `mo.running_in_notebook()` is
   still `True` and `mo.app_meta().mode` is `"edit"` during export.
 - Live data failures raise. A recipe never renders a sample and calls it a
