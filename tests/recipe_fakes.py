@@ -83,6 +83,8 @@ def install():
             }
             if scenario == "null_stats":
                 data["stats"] = dict.fromkeys(data["stats"])
+            if scenario == "missing_benchmark":
+                data["curve"]["btc_benchmark"] = [None, None]
         else:
             raise AssertionError(f"Unexpected request {method} {endpoint}")
         response = requests.Response()

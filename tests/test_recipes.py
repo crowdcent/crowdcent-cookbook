@@ -130,6 +130,7 @@ class RecipeTests(unittest.TestCase):
         for scenario, args in (
             ("normal", ()),
             ("null_stats", ("--n_long=20", "--leverage=1.5")),
+            ("missing_benchmark", ()),
         ):
             with self.subTest(scenario=scenario):
                 _, calls = self.export(
