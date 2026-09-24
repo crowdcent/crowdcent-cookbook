@@ -92,8 +92,10 @@ class ExecutionTests(unittest.TestCase):
 @app.cell
 def _(json, Path):
     from types import SimpleNamespace
-    client = SimpleNamespace(submit_predictions=lambda **values:
-        Path("submission.json").write_text(json.dumps(values)))
+    def _submit(**values):
+        Path("submission.json").write_text(json.dumps(values))
+        return {"status": "queued", "slot": values["slot"]}
+    client = SimpleNamespace(submit_predictions=_submit)
     predictions = [{"id": "example", "pred_10d": 0.5, "pred_30d": 0.6}]
     return client, predictions
 """
