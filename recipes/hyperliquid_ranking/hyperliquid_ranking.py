@@ -112,10 +112,10 @@ def _(features, inference_data, model, pl):
 
 
 @app.cell
-def _(os, predictions):
+def _(predictions):
     from pathlib import Path
 
-    output = Path(os.environ.get("CROWDCENT_OUT_DIR", "out"))
+    output = Path("out")
     output.mkdir(parents=True, exist_ok=True)
     predictions.write_csv(output / "predictions.csv")
     return

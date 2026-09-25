@@ -240,7 +240,6 @@ def worker(slug, work, cache):
     )
     os.environ.pop("CROWDCENT_RUN_ID", None)
     os.environ.pop("MARIMO_SCRIPT_EDIT", None)
-    os.environ["CROWDCENT_OUT_DIR"] = str(work / "out")
     sys.path.insert(0, str(work))
     notebook = work / f"{slug}.py"
     sys.argv = [str(notebook), *spec.get("args", [])]

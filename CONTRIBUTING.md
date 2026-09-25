@@ -73,7 +73,7 @@ args = ["--account=crowdcent"]
 ```
 
 `output` is `figure` (a Plotly chart named by `figure`), a relative `.csv`
-table, or a small `.json` artifact under `CROWDCENT_OUT_DIR`. Name the actual
+table, or a small `.json` artifact under `out/`. Name the actual
 figure variable in the notebook; no thumbnail-only computation is needed.
 Optional presentation settings include `badge`, `x_label`, `y_label`,
 `y_suffix`, `legend`/`legend_prefix`, and CSV `sort`/`columns`. Keep labels accurate and

@@ -8,7 +8,7 @@
           "marker": {
             "color": {
               "dtype": "i1",
-              "bdata": "BwcIBQYGBgIDAwQDAwIEAgMDAwMEAwID"
+              "bdata": "BwQCAwMIBAQFBAMGBAIFBQQDAwIFAgID"
             },
             "coloraxis": "coloraxis",
             "symbol": "circle"
@@ -19,12 +19,12 @@
           "showlegend": false,
           "x": {
             "dtype": "f8",
-            "bdata": "rTJ38ufsuz/5ZMtukxbRP/OaZogcpLM/OiYA82kJsD937Vw3JZbKP8ZYG33RA6w/OrjJobH2xj+7RV86m8G9P1e2WB/5paQ/TBbsxTxalD/06ijVZvqVP4uEnmztXZs/dtXgukqojz+ut5D/QsWiPz3i2fG1EI4/2HCYA0pAmz9ohGRMzZGHP/vDK1dfnKY/6UWEnrcIjz8dXqNbByahP+R7oDdEn4Y/oVKI0HYwhT+h3j7zl4aZPxE3UqP4T5A/"
+            "bdata": "9qhWrfV8zD+edbIgG6qjPxzsq5M+6LY/MciI70bjsj92dbMIGqXCP8iyE6s+/I8/2aIH0Ej+yT8ul/7vp1aFP+Js9W6MgZc/bxoEXPfaoD9TVAUCRr6cP6uh+ssFuoU/zZFF1HIVmj/AFzcIw7SMP0RcULPcroo/GQvjhYE0jz8QCyNkqLCcP9OTL+n1DZA/oqtVqhpKsD8T4B+wPmekPyGxeuyepIg/K3Q4ZtxHnj/xOF0psoyrP7mQMSTt76A/"
           },
           "xaxis": "x",
           "y": {
             "dtype": "f8",
-            "bdata": "9q7ZBCmGrz8l1CmPzTmoP4ZElyEtWbI/n/aPenf2uz/kgsjNFJGyP8vUXLf/yLs/rW9/x5cVpz+lMih4vpi7PxDxL3PWS70/StA4vQWCvz89VmtCrZq/P8M1xvnHF8A/kltPklzRvz+CX3/awPy/PxIYbXjMnb4/uZ0SoqF8wD93dBn/63LAP5p5NTipeL4/CbMSRjhxwD9/0aU1RD+/P4jWRDs1HMA/3eqQt0JIwD9wwtMQM1PAP0+n/jp9ksA/"
+            "bdata": "DmAMzU2psz9TagkYPOS/Pw1Ser714Lw/cunPjxP3vj+7ONQHONC4P05N8g8na7s/HUWxul6ssT9R28vjqHnAP2EqoGtzaMA/nTqyRy6KvT/XAk3p1KPAP036HDOtr74//JpJ/o94vj/cXcgPg3DAP1SXqifdt74/P6ckXow1vj8mbtLCP7m/P6ic6KDqccA/AAj8NhTvvz9BouJ7VL/AP9+SJCj2MsA/kihwXIx/wD9uO3syqI3AP9NmB09mj8A/"
           },
           "yaxis": "y",
           "type": "scatter"
@@ -874,14 +874,14 @@
   ],
   "datasets": {
     "training_data.parquet": {
-      "sha256": "a750de574c4816ed0a8b484f797f6d79c52bf476186739b19cdf5e3b770b74df",
-      "through": "2026-08-16"
+      "sha256": "6caefa4b6745314fbbb3ef5a52c5aed93e9d1b3f6491104eab2abe8e6377c7bc",
+      "through": "2026-08-24"
     }
   },
   "schema": 1,
   "data": "real",
-  "notebook_sha256": "0c917057d1497d85223dd808f7594faf0b8e124d6a4626df244f3c307a78c26c",
-  "captured_at": "2026-09-17T01:58:17+00:00",
+  "notebook_sha256": "05eb48a150c943f91a0b427ec21ff3273d5a5edfae9980cbd6ba48202ae1f2dd",
+  "captured_at": "2026-09-25T01:50:12+00:00",
   "label": "24 trials \u00b7 XGBoost",
   "parameters": [
     "--trials=24",

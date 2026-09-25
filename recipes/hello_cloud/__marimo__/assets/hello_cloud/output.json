@@ -7,8 +7,8 @@
   },
   "schema": 1,
   "data": "real",
-  "notebook_sha256": "30e7e9e1f1a949be8b13221d5f9c3a76df0f4090b73709da85f4f7e71858d7c5",
-  "captured_at": "2026-09-16T13:47:05+00:00",
+  "notebook_sha256": "dfe6f17c46e9be68bd2dabc390fe4ff0c2e2ab6582a0aad6d6880c6f68784b63",
+  "captured_at": "2026-09-25T01:46:24+00:00",
   "label": "Actual hello.json artifact",
   "parameters": [],
   "api_url": null
