@@ -134,21 +134,8 @@ def _(client, mo, os, predictions, submit):
         not os.environ.get("CROWDCENT_RUN_ID") and not submit.value,
         mo.md("Press **Submit to the Challenge** to send these predictions to slot 1."),
     )
-    receipt = client.submit_predictions(df=predictions, slot=1)
-    release = receipt.get("inference_data_release_date")
-    round_ = (
-        f"the round released {release[:10]}"
-        if release
-        else "the next round, queued until its window opens"
-    )
-    mo.callout(
-        mo.md(
-            f"Submitted {len(predictions)} assets to slot {receipt['slot']} for {round_}. "
-            "Scoring begins after the round closes. Follow it on the "
-            "[Hyperliquid ranking challenge page](https://crowdcent.com/challenge/hyperliquid-ranking/)."
-        ),
-        kind="success",
-    )
+    client.submit_predictions(df=predictions, slot=1)
+    mo.callout("Submitted to slot 1.", kind="success")
     return
 
 

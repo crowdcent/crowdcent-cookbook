@@ -64,12 +64,7 @@ def install():
                 pl.col("pred_10d", "pred_30d").is_between(0, 1).all()
             ).row(0) == (True, True)
             record("submission", rows=frame.height, slot=kwargs["data"]["slot"])
-            data = {
-                "id": 1,
-                "status": "pending",
-                "slot": int(kwargs["data"]["slot"]),
-                "inference_data_release_date": "2026-01-01T00:00:00Z",
-            }
+            data = {"id": 1, "status": "pending"}
         elif endpoint.endswith("/simulator/run/"):
             data = {
                 "stats": {
