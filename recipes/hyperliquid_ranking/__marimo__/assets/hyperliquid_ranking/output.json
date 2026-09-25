@@ -44,8 +44,8 @@
   ],
   "schema": 1,
   "data": "real",
-  "notebook_sha256": "5e829e208a7e0c96555977efd9357f1213e88ffc5857972628e4352ba423051e",
-  "captured_at": "2026-09-24T23:49:38+00:00",
+  "notebook_sha256": "ea8f5cbd17cdffca9b2edab5a686ce4a36f6d5c262250b2fdd46509e9b0401e6",
+  "captured_at": "2026-09-25T00:22:26+00:00",
   "label": "Model predictions",
   "parameters": [],
   "api_url": "https://crowdcent.com/api"
