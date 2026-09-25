@@ -82,8 +82,10 @@ def _(XGBRegressor, pl, training_data):
         raise ValueError(
             "Training data needs features and resolved 10-day and 30-day targets."
         )
+    X, y = labeled[features].to_numpy(), labeled[targets].to_numpy()
     model = XGBRegressor(n_estimators=200, n_jobs=2, random_state=0)
-    model.fit(labeled[features].to_numpy(), labeled[targets].to_numpy())
+    # Prints in-sample error every 25 trees: a progress heartbeat, not model quality.
+    model.fit(X, y, eval_set=[(X, y)], verbose=25)
     return features, model
 
 
@@ -132,7 +134,21 @@ def _(client, mo, os, predictions, submit):
         not os.environ.get("CROWDCENT_RUN_ID") and not submit.value,
         mo.md("Press **Submit to the Challenge** to send these predictions to slot 1."),
     )
-    client.submit_predictions(df=predictions, slot=1)
+    receipt = client.submit_predictions(df=predictions, slot=1)
+    release = receipt.get("inference_data_release_date")
+    round_ = (
+        f"the round released {release[:10]}"
+        if release
+        else "the next round, queued until its window opens"
+    )
+    mo.callout(
+        mo.md(
+            f"Submitted {len(predictions)} assets to slot {receipt['slot']} for {round_}. "
+            "Scoring begins after the round closes. Follow it on the "
+            "[Hyperliquid ranking challenge page](https://crowdcent.com/challenge/hyperliquid-ranking/)."
+        ),
+        kind="success",
+    )
     return
 
 

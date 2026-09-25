@@ -2,50 +2,50 @@
   "figures": [],
   "datasets": {
     "inference_data.csv": {
-      "sha256": "22dcb1574d0ebde28054ef916c56495faa7d212362c6d219c75980cf14cd4630",
-      "through": "2026-09-15"
+      "sha256": "b6998f22d426b42c3e0b9945382dbc072e0fade384dec5a6994ef32af647a29d",
+      "through": "2026-09-23"
     },
     "training_data.parquet": {
-      "sha256": "a750de574c4816ed0a8b484f797f6d79c52bf476186739b19cdf5e3b770b74df",
-      "through": "2026-08-16"
+      "sha256": "109e936d52aefa993be7cb9a502ccc445980b32b9cc8b88fe46c1b7d7d429e42",
+      "through": "2026-08-23"
     }
   },
   "artifact": [
     {
       "id": "TRX",
-      "pred_10d": 0.8681615,
-      "pred_30d": 0.9754867
+      "pred_10d": 0.5497026,
+      "pred_30d": 1.0
     },
     {
-      "id": "JTO",
-      "pred_10d": 0.5338435,
-      "pred_30d": 0.8663711
+      "id": "APEX",
+      "pred_10d": 0.5124617,
+      "pred_30d": 0.7578197
     },
     {
-      "id": "CC",
-      "pred_10d": 0.6209879,
-      "pred_30d": 0.7944186
+      "id": "HYPE",
+      "pred_10d": 0.44423243,
+      "pred_30d": 0.75612515
     },
     {
-      "id": "PAXG",
-      "pred_10d": 0.63998973,
-      "pred_30d": 0.78815556
+      "id": "MON",
+      "pred_10d": 0.6278955,
+      "pred_30d": 0.75194883
     },
     {
-      "id": "SEI",
-      "pred_10d": 0.5433801,
-      "pred_30d": 0.7360123
+      "id": "BNB",
+      "pred_10d": 0.6935196,
+      "pred_30d": 0.7261939
     },
     {
-      "id": "ZK",
-      "pred_10d": 0.5556284,
-      "pred_30d": 0.70917493
+      "id": "XAI",
+      "pred_10d": 0.61210555,
+      "pred_30d": 0.7061719
     }
   ],
   "schema": 1,
   "data": "real",
-  "notebook_sha256": "b38fd1a241f1bc7bd6ab54c7c09bd84435acbd990b8a875ef90f419283c2d399",
-  "captured_at": "2026-09-17T02:10:39+00:00",
+  "notebook_sha256": "5e829e208a7e0c96555977efd9357f1213e88ffc5857972628e4352ba423051e",
+  "captured_at": "2026-09-24T23:49:38+00:00",
   "label": "Model predictions",
   "parameters": [],
   "api_url": "https://crowdcent.com/api"
