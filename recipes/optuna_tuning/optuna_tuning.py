@@ -227,10 +227,10 @@ def _(mo, pl, px, study):
 
 
 @app.cell
-def _(XGBRegressor, data, features, joblib, os, pathlib, search, study, trials):
+def _(XGBRegressor, data, features, joblib, pathlib, search, study, trials):
     model = XGBRegressor(**study.best_params, n_jobs=2)
     model.fit(data[features].to_numpy(), data[search["target"]].to_numpy())
-    out = pathlib.Path(os.environ.get("CROWDCENT_OUT_DIR", "out"))
+    out = pathlib.Path("out")
     for folder in ("models", "trials"):
         (out / folder).mkdir(parents=True, exist_ok=True)
     joblib.dump(model, out / "models" / f"{search['name']}.joblib")

@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "data": "real",
-  "source_sha256": "8cac8f617970d5529791542e2f761c4ec382852a3980e8fd0608bae678674e4b",
-  "image_sha256": "ffea4022d516a53a57a4b22f06d2cae28fc0a528d687a391f6b9991444301eb1",
-  "captured_at": "2026-09-25T00:22:26+00:00",
+  "source_sha256": "6370274ea2f3ad13f4743add2912576b380eac604402191c71b4dca57c6ed573",
+  "image_sha256": "ea84116a80ceac611879920fa5c55d1a3cc54e8d8c1f28b05eb2344cf25fde64",
+  "captured_at": "2026-09-25T01:47:03+00:00",
   "data_through": "2026-09-23",
   "label": "Model predictions"
 }

@@ -62,7 +62,6 @@ class RecipeTests(unittest.TestCase):
             {
                 "PYTHONPATH": os.pathsep.join((str(hooks), str(ROOT / "tests"))),
                 "CROWDCENT_API_KEY": "test-only",
-                "CROWDCENT_OUT_DIR": str(work / "artifacts" / "output"),
                 "COOKBOOK_TEST_SCENARIO": scenario,
                 "OMP_NUM_THREADS": "2",
                 "OPENBLAS_NUM_THREADS": "2",
@@ -108,14 +107,14 @@ class RecipeTests(unittest.TestCase):
     def test_hello_writes_a_run_artifact(self):
         work, _ = self.export("hello_cloud")
         self.assertEqual(
-            json.loads((work / "artifacts/output/hello.json").read_text()),
+            json.loads((work / "out/hello.json").read_text()),
             {"greeting": "hello", "run": "test-run"},
         )
 
     def test_ranking_trains_predicts_and_serializes_a_submission(self):
         work, calls = self.export("hyperliquid_ranking")
         self.assertIn({"kind": "submission", "rows": 8, "slot": "1"}, calls)
-        self.assertTrue((work / "artifacts/output/predictions.csv").exists())
+        self.assertTrue((work / "out/predictions.csv").exists())
 
     def test_ranking_preview_does_not_submit(self):
         _, calls = self.export("hyperliquid_ranking", cloud=False)
@@ -148,9 +147,9 @@ class RecipeTests(unittest.TestCase):
         work, _ = self.export(
             "optuna_tuning", args=("--trials=2", "--depth_max=2", "--name=smoke")
         )
-        self.assertTrue((work / "artifacts/output/models/smoke.joblib").exists())
+        self.assertTrue((work / "out/models/smoke.joblib").exists())
         self.assertEqual(
-            len((work / "artifacts/output/trials/smoke.csv").read_text().splitlines()),
+            len((work / "out/trials/smoke.csv").read_text().splitlines()),
             3,
         )
 

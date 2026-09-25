@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "data": "real",
-  "source_sha256": "baedcac2c87004b9b8a60181e5e2f58ab97197546cf866e1275704b99761f1cf",
-  "image_sha256": "4d356ecc77009f51a3087b8f62cfa8b5c4164ea4109bd01ceb0dfa9e7f8e19ff",
-  "captured_at": "2026-09-16T13:47:05+00:00",
+  "source_sha256": "027ae849fe30d77c3d8754e9eafc3a88d1a34668b6af7cd15e7460c9752f5c88",
+  "image_sha256": "921420b538441acc3379b1b24a697c5a571c5d862818cc9a2c579ccba4746137",
+  "captured_at": "2026-09-25T01:46:24+00:00",
   "data_through": null,
   "label": "Actual hello.json artifact"
 }

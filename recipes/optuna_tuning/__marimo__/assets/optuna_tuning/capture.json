@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "data": "real",
-  "source_sha256": "75ae847361b046661de9032c5b9b518439e70771c16af940630798d6d1f496c8",
-  "image_sha256": "4a83c8409b96b9bd31d403339de2e0987792b1ba882279c8de4027cb3c90978c",
-  "captured_at": "2026-09-17T01:58:17+00:00",
-  "data_through": "2026-08-16",
+  "source_sha256": "350494da122d5af3ebf3b47647c1440a35cf146e0a06bcee302db9810e7c8fef",
+  "image_sha256": "45072b4613063d35fea0150ee770ab323d2b074e9d0aeab26d0cebb5dbd34604",
+  "captured_at": "2026-09-25T01:50:12+00:00",
+  "data_through": "2026-08-24",
   "label": "24 trials \u00b7 XGBoost"
 }

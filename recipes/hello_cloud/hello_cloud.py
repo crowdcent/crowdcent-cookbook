@@ -55,8 +55,8 @@ def _(mo, os):
 
 
 @app.cell
-def _(json, os, pathlib, run_id):
-    out = pathlib.Path(os.environ.get("CROWDCENT_OUT_DIR", "out"))
+def _(json, pathlib, run_id):
+    out = pathlib.Path("out")
     out.mkdir(parents=True, exist_ok=True)
     (out / "hello.json").write_text(json.dumps({"greeting": "hello", "run": run_id}))
     print(f"wrote {out / 'hello.json'}")

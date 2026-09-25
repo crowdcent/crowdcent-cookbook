@@ -6,46 +6,46 @@
       "through": "2026-09-23"
     },
     "training_data.parquet": {
-      "sha256": "109e936d52aefa993be7cb9a502ccc445980b32b9cc8b88fe46c1b7d7d429e42",
-      "through": "2026-08-23"
+      "sha256": "6caefa4b6745314fbbb3ef5a52c5aed93e9d1b3f6491104eab2abe8e6377c7bc",
+      "through": "2026-08-24"
     }
   },
   "artifact": [
     {
       "id": "TRX",
-      "pred_10d": 0.5497026,
+      "pred_10d": 0.63326913,
       "pred_30d": 1.0
     },
     {
-      "id": "APEX",
-      "pred_10d": 0.5124617,
-      "pred_30d": 0.7578197
+      "id": "UNI",
+      "pred_10d": 0.6123959,
+      "pred_30d": 0.89961463
     },
     {
       "id": "HYPE",
-      "pred_10d": 0.44423243,
-      "pred_30d": 0.75612515
+      "pred_10d": 0.62439734,
+      "pred_30d": 0.8711381
     },
     {
-      "id": "MON",
-      "pred_10d": 0.6278955,
-      "pred_30d": 0.75194883
+      "id": "BANANA",
+      "pred_10d": 0.5737217,
+      "pred_30d": 0.7716757
     },
     {
-      "id": "BNB",
-      "pred_10d": 0.6935196,
-      "pred_30d": 0.7261939
+      "id": "DOT",
+      "pred_10d": 0.64791596,
+      "pred_30d": 0.7671288
     },
     {
-      "id": "XAI",
-      "pred_10d": 0.61210555,
-      "pred_30d": 0.7061719
+      "id": "NOT",
+      "pred_10d": 0.45688862,
+      "pred_30d": 0.7449393
     }
   ],
   "schema": 1,
   "data": "real",
-  "notebook_sha256": "ea8f5cbd17cdffca9b2edab5a686ce4a36f6d5c262250b2fdd46509e9b0401e6",
-  "captured_at": "2026-09-25T00:22:26+00:00",
+  "notebook_sha256": "be1edfafe63de850fe5d32718da209af76511ed45501646c0b07d54e6d5b1794",
+  "captured_at": "2026-09-25T01:47:03+00:00",
   "label": "Model predictions",
   "parameters": [],
   "api_url": "https://crowdcent.com/api"
