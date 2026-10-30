@@ -1,0 +1,45 @@
+{
+  "figures": [],
+  "datasets": {},
+  "artifact": [
+    {
+      "fold": 1,
+      "spearman_10d": 0.0429,
+      "spearman_30d": 0.0695,
+      "ndcg@40_30d": 0.6311
+    },
+    {
+      "fold": 2,
+      "spearman_10d": 0.1284,
+      "spearman_30d": 0.1546,
+      "ndcg@40_30d": 0.6393
+    },
+    {
+      "fold": 3,
+      "spearman_10d": 0.1195,
+      "spearman_30d": 0.2443,
+      "ndcg@40_30d": 0.685
+    },
+    {
+      "fold": 4,
+      "spearman_10d": 0.1651,
+      "spearman_30d": 0.2262,
+      "ndcg@40_30d": 0.6595
+    },
+    {
+      "fold": 5,
+      "spearman_10d": 0.0704,
+      "spearman_30d": 0.1097,
+      "ndcg@40_30d": 0.6041
+    }
+  ],
+  "schema": 1,
+  "data": "real",
+  "notebook_sha256": "e0672ebe646ddbc5c0980f352e737cf43020d2ea58bdfe449ce48c3121535169",
+  "captured_at": "2026-10-30T19:48:24+00:00",
+  "label": "Purged walk-forward \u00b7 Ridge",
+  "parameters": [
+    "--family=ridge"
+  ],
+  "api_url": "https://crowdcent.com/api"
+}

@@ -1,0 +1,43 @@
+{
+  "figures": [],
+  "datasets": {},
+  "artifact": [
+    {
+      "id": "TRX",
+      "pred_10d": 1.0,
+      "pred_30d": 1.0
+    },
+    {
+      "id": "FOGO",
+      "pred_10d": 0.9821428571428571,
+      "pred_30d": 0.994047619047619
+    },
+    {
+      "id": "HYPE",
+      "pred_10d": 0.988095238095238,
+      "pred_30d": 0.988095238095238
+    },
+    {
+      "id": "BTC",
+      "pred_10d": 0.994047619047619,
+      "pred_30d": 0.9821428571428571
+    },
+    {
+      "id": "PAXG",
+      "pred_10d": 0.9107142857142857,
+      "pred_30d": 0.9761904761904762
+    },
+    {
+      "id": "SOL",
+      "pred_10d": 0.9702380952380952,
+      "pred_30d": 0.9702380952380952
+    }
+  ],
+  "schema": 1,
+  "data": "real",
+  "notebook_sha256": "416bdf4edaadfe0a6e795d3ef162de7a5d47d13aa6071bbb131c5cef067ab808",
+  "captured_at": "2026-10-30T19:48:11+00:00",
+  "label": "hl-xgb-baseline",
+  "parameters": [],
+  "api_url": "https://crowdcent.com/api"
+}

@@ -89,6 +89,7 @@ class RecipeTests(unittest.TestCase):
             text=True,
             timeout=120,
         )
+        self.output = result.stdout + result.stderr
         if success:
             self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
             self.assertTrue((work / "report.html").is_file())
@@ -153,6 +154,140 @@ class RecipeTests(unittest.TestCase):
             3,
         )
 
+    def test_zoo_family_writes_a_folder_its_manifest_describes(self):
+        import hashlib
+
+        for family, model_files in (
+            ("ridge", {"model": "weights.npz"}),
+            ("xgboost", {"model": "model.ubj"}),
+            ("mlp", {"model": "weights.npz"}),
+        ):
+            with self.subTest(family=family):
+                work, _ = self.export(
+                    "zoo_models", args=(f"--family={family}", "--version=3")
+                )
+                zoo = work / "out/zoo"
+                manifest = json.loads((zoo / "manifest.json").read_text())
+                self.assertEqual(manifest["ref"], f"{manifest['name']}@3")
+                self.assertEqual(manifest["supersedes"], f"{manifest['name']}@2")
+                self.assertEqual(manifest["features"], ["feature_0", "feature_1"])
+                self.assertEqual(
+                    (manifest["challenge"], manifest["data_version"]),
+                    ("hyperliquid-ranking", "test"),
+                )
+                self.assertEqual(
+                    {key: entry["name"] for key, entry in manifest["files"].items()},
+                    {
+                        **model_files,
+                        "oof": "oof.parquet",
+                        "oof_csv": "oof.csv",
+                        "check": "check.csv",
+                    },
+                )
+                self.assertEqual(
+                    sorted(p.name for p in zoo.iterdir()),
+                    sorted(
+                        [
+                            *(e["name"] for e in manifest["files"].values()),
+                            "manifest.json",
+                        ]
+                    ),
+                )
+                for entry in manifest["files"].values():
+                    data = (zoo / entry["name"]).read_bytes()
+                    self.assertEqual(
+                        (entry["bytes"], entry["sha256"]),
+                        (len(data), hashlib.sha256(data).hexdigest()),
+                    )
+                self.assertEqual(
+                    manifest["size_bytes"],
+                    sum(e["bytes"] for e in manifest["files"].values()),
+                )
+                evaluation = manifest["evaluation"]
+                self.assertEqual(len(evaluation["folds"]), 4)
+                self.assertEqual(evaluation["purge_days"], 31)
+                for score in (
+                    *evaluation["scores"].values(),
+                    evaluation["corr_to_meta_30d"],
+                ):
+                    self.assertIsInstance(score, float)
+                oof = (zoo / "oof.csv").read_text().splitlines()
+                self.assertEqual(oof[0], "id,date,pred_10d,pred_30d,fold")
+                self.assertEqual(
+                    {line.rsplit(",", 1)[1] for line in oof[1:]},
+                    {"1", "2", "3", "4", "5"},
+                )
+
+    def test_zoo_mlp_saves_plain_number_arrays(self):
+        import numpy as np
+
+        work, _ = self.export("zoo_models", args=("--family=mlp",))
+        with np.load(work / "out/zoo/weights.npz", allow_pickle=False) as weights:
+            self.assertEqual(
+                sorted(weights.files),
+                ["b0", "b1", "b2", "w0", "w1", "w2", "x_mean", "x_scale"],
+            )
+            self.assertEqual(weights["w0"].shape, (2, 64))
+
+    def test_zoo_blend_refuses_members_trained_on_other_data(self):
+        work, _ = self.export("zoo_models", args=("--family=blend",), success=False)
+        self.assertIn("hl-ridge-baseline@1 was trained on other data", self.output)
+        self.assertFalse((work / "out/zoo/manifest.json").exists())
+
+    def test_zoo_waits_for_the_form_in_an_interactive_notebook(self):
+        _, calls = self.export("zoo_models", cloud=False)
+        self.assertEqual(calls, [])
+
+    def test_zoo_refuses_an_unknown_family_before_downloading(self):
+        _, calls = self.export("zoo_models", args=("--family=forest",), success=False)
+        self.assertEqual(calls, [])
+
+    def test_zoo_quickstart_predicts_with_the_chosen_zoo_model_and_submits(self):
+        for args, model in (
+            ((), "hl-xgb-baseline"),
+            (("--model=hl-ridge-baseline",), "hl-ridge-baseline"),
+            (("--model=hl-mlp-baseline",), "hl-mlp-baseline"),
+            (("--model=hl-lstm-baseline",), "hl-lstm-baseline"),
+        ):
+            with self.subTest(model=model):
+                work, calls = self.export("zoo_quickstart", args=args)
+                self.assertIn({"kind": "submission", "rows": 8, "slot": "1"}, calls)
+                self.assertEqual(
+                    [
+                        c["path"]
+                        for c in calls
+                        if c.get("path", "").endswith("/download/")
+                    ],
+                    [f"/zoo/{model}@1/download/"],
+                )
+                self.assertFalse(
+                    any(
+                        c["kind"] == "download" and "training" in c["endpoint"]
+                        for c in calls
+                    )
+                )
+                predictions = (work / "out/predictions.csv").read_text().splitlines()
+                self.assertEqual(predictions[0], "id,pred_10d,pred_30d")
+                self.assertEqual(len(predictions), 9)
+
+    def test_zoo_quickstart_blend_loads_each_member_and_submits(self):
+        work, calls = self.export("zoo_quickstart", args=("--model=hl-blend",))
+        self.assertIn({"kind": "submission", "rows": 8, "slot": "1"}, calls)
+        self.assertEqual(
+            [c["path"] for c in calls if c.get("path", "").endswith("/download/")],
+            ["/zoo/hl-ridge-baseline@1/download/", "/zoo/hl-xgb-baseline@1/download/"],
+        )
+        predictions = (work / "out/predictions.csv").read_text().splitlines()
+        self.assertEqual(len(predictions), 9)
+
+    def test_zoo_quickstart_preview_does_not_submit(self):
+        _, calls = self.export("zoo_quickstart", cloud=False)
+        self.assertFalse(any(call["kind"] == "submission" for call in calls))
+
+    def test_zoo_quickstart_refuses_weights_that_fail_their_checksum(self):
+        _, calls = self.export("zoo_quickstart", scenario="tampered", success=False)
+        self.assertFalse(any(call["kind"] == "submission" for call in calls))
+
     def test_numerai_runs_with_default_and_explicit_account_and_empty_account(self):
         for scenario, args in (
             ("normal", ()),
@@ -190,6 +325,8 @@ class RecipeTests(unittest.TestCase):
             "simulate_the_meta_model",
             "optuna_tuning",
             "numerai_dashboard",
+            "zoo_models",
+            "zoo_quickstart",
         ):
             with self.subTest(recipe=recipe):
                 self.export(recipe, scenario="api_failure", success=False)
