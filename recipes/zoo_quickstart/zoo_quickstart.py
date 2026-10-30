@@ -16,7 +16,7 @@
 # [tool.crowdcent.thumbnail]
 # title = "Zoo model predictions"
 # output = "predictions.csv"
-# label = "hl-xgb-baseline"
+# label = "hl-blend"
 # badge = "MODEL OUTPUT"
 # sort = "pred_30d"
 # columns = {id = "ASSET", pred_10d = "10-DAY RANK", pred_30d = "30-DAY RANK"}
@@ -78,7 +78,7 @@ def _(cc, mo):
     mo.stop(not names, mo.md("The model zoo has no live model yet."))
     picker = mo.ui.dropdown(
         names,
-        value="hl-xgb-baseline" if "hl-xgb-baseline" in names else names[0],
+        value=next((n for n in ("hl-blend", "hl-xgb-baseline") if n in names), names[0]),
         label="Model",
     )
     picker
