@@ -244,7 +244,7 @@ class RecipeTests(unittest.TestCase):
 
     def test_zoo_quickstart_predicts_with_the_chosen_zoo_model_and_submits(self):
         for args, model in (
-            ((), "hl-xgb-baseline"),
+            (("--model=hl-xgb-baseline",), "hl-xgb-baseline"),
             (("--model=hl-ridge-baseline",), "hl-ridge-baseline"),
             (("--model=hl-mlp-baseline",), "hl-mlp-baseline"),
             (("--model=hl-lstm-baseline",), "hl-lstm-baseline"),
@@ -271,14 +271,17 @@ class RecipeTests(unittest.TestCase):
                 self.assertEqual(len(predictions), 9)
 
     def test_zoo_quickstart_blend_loads_each_member_and_submits(self):
-        work, calls = self.export("zoo_quickstart", args=("--model=hl-blend",))
-        self.assertIn({"kind": "submission", "rows": 8, "slot": "1"}, calls)
-        self.assertEqual(
-            [c["path"] for c in calls if c.get("path", "").endswith("/download/")],
-            ["/zoo/hl-ridge-baseline@1/download/", "/zoo/hl-xgb-baseline@1/download/"],
-        )
-        predictions = (work / "out/predictions.csv").read_text().splitlines()
-        self.assertEqual(len(predictions), 9)
+        # With no model named, the quickstart opens on the blend.
+        for args in ((), ("--model=hl-blend",)):
+            with self.subTest(args=args):
+                work, calls = self.export("zoo_quickstart", args=args)
+                self.assertIn({"kind": "submission", "rows": 8, "slot": "1"}, calls)
+                self.assertEqual(
+                    [c["path"] for c in calls if c.get("path", "").endswith("/download/")],
+                    ["/zoo/hl-ridge-baseline@1/download/", "/zoo/hl-xgb-baseline@1/download/"],
+                )
+                predictions = (work / "out/predictions.csv").read_text().splitlines()
+                self.assertEqual(len(predictions), 9)
 
     def test_zoo_quickstart_preview_does_not_submit(self):
         _, calls = self.export("zoo_quickstart", cloud=False)
