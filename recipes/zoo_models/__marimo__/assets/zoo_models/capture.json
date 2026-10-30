@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "data": "real",
+  "source_sha256": "81aed71e0e5ac0c74ccc077f8ea1c28f6ffd1a5c002eab96a970542271a019b3",
+  "image_sha256": "b3b353c573098aabb9e89ec666acb031223622ef56fe8d005031432ca81618ef",
+  "captured_at": "2026-10-30T19:48:24+00:00",
+  "data_through": null,
+  "label": "Purged walk-forward \u00b7 Ridge"
+}

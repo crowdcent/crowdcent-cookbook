@@ -67,6 +67,19 @@ Recipes that call CrowdCent read `CROWDCENT_API_KEY` from the environment. On
 Cloud that is the project's Challenge access switch; elsewhere,
 [create a key](https://crowdcent.com/profile/settings/) and export it.
 
+## Skills
+
+Skills are short instruction files for AI agents, in `skills/`. Each one is a
+`SKILL.md` that an agent follows from top to bottom, plus any scripts it runs.
+
+| Skill | What it does |
+|---|---|
+| [crowdcent-scores](skills/crowdcent-scores) | Reads your live scores, counts the independent results, and names at most three things to try. Read-only. |
+| [crowdcent-hillclimb](skills/crowdcent-hillclimb) | Improves a model in small rounds, keeps only changes that beat the noise, and never submits. |
+
+To use one in Claude Code, Cursor or Codex, copy its folder into your agent's
+skills folder. To write one, see [skills/README.md](skills/README.md).
+
 ## Preview images
 
 Recipe cards use actual notebook results, with a source/account and date on
