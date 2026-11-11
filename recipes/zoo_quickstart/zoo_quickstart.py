@@ -55,8 +55,9 @@ def _(mo):
     submits to the `hyperliquid-ranking` challenge. There is no training
     step. The `zoo_models` recipe shows how each model was made.
 
-    The default is the XGBoost baseline. Pick another model below, or set a
-    run parameter such as `model=hl-ridge-baseline`.
+    The default is `hl-blend`, the rank average of the ridge, XGBoost,
+    LightGBM and MLP models. Pick another model below, or set a run
+    parameter such as `model=hl-ridge-baseline`.
 
     Cloud runs, including scheduled runs, submit automatically to slot 1.
     In an interactive notebook, submission waits for the button below.
