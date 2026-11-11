@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "data": "real",
-  "source_sha256": "6204915875d644fce166a10d065ded1de328e57378ac04d5ae865b12cfccc39e",
-  "image_sha256": "b13f6de5c8630332e9d4038600712f91c721421426109d00574ff574749ab0bb",
-  "captured_at": "2026-10-30T20:29:53+00:00",
+  "source_sha256": "157c5304063cafeb89eebac4455117dde9dc6e1ac1c99114963ae00311fdd736",
+  "image_sha256": "39e2521252d0022a618b8a5b0fd274123818a88621155b08dac53563a0f34291",
+  "captured_at": "2026-11-11T18:40:13+00:00",
   "data_through": null,
   "label": "hl-blend"
 }
